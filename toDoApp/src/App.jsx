@@ -47,26 +47,53 @@ export function App() {
 
   function handleSelectChange(event) {
     event.preventDefault();
-
-    console.log(event.target.value);
     const results = event.target.value;
 
+    if (results === "all") {
+      // console.log(todos);
+      fetch(`http://localhost:8000/todos/`, {
+        method: "GET",
+      })
+        .then((response) => response.json())
+        .then((newTodo) => {
+          let lala = newTodo;
+          console.log(lala);
+          setTodos(lala);
+        });
+    } else if (results === "completed") {
+      fetch(`http://localhost:8000/todos/`, {
+        method: "GET",
+      })
+        .then((response) => response.json())
+        .then((newTodo) => {
+          let lala = newTodo;
+          const remainingTodos = lala.filter((todo) => todo.completed);
+          console.log(remainingTodos);
+          setTodos(remainingTodos);
+        });
+    } else if (results === "incompleted") {
+      fetch(`http://localhost:8000/todos/`, {
+        method: "GET",
+      })
+        .then((response) => response.json())
+        .then((newTodo) => {
+          let lala = newTodo;
+          const remainingTodos = lala.filter((todo) => !todo.completed);
+          console.log(remainingTodos);
+          setTodos(remainingTodos);
+        });
+    }
+  }
+
+  function handleSearch(event) {
+    event.preventDefault();
+    const text1 = value;
+    console.log(text1);
     fetch(`http://localhost:8000/todos/`, {
       method: "GET",
     }).then(() => {
-      console.log(todos);
-      if (results === "all") {
-        // console.log(todos);
-        setTodos(todos);
-      } else if (results === "completed") {
-        const remainingTodos = todos.filter((todo) => todo.completed);
-        // console.log(todos);
-        setTodos(remainingTodos);
-      } else if (results === "incompleted") {
-        const remainingTodos = todos.filter((todo) => !todo.completed);
-        // console.log(todos);
-        setTodos(remainingTodos);
-      }
+      const remainingTodos = todos.filter((todo) => todo.text === text1);
+      setTodos(remainingTodos);
     });
   }
 
@@ -81,9 +108,19 @@ export function App() {
       <div className="head">
         <h1>TODO LIST</h1>
         <div className="header">
-          <form>
-            <input className="search" placeholder="Search note..." />
+          <form onSubmit={handleSearch}>
+            <input
+              className="search"
+              placeholder="Search note..."
+              type="text"
+              value={value}
+              onChange={(event) => setValue(event.target.value)}
+            />
+            <div>
+              <button type="submit">Search</button>
+            </div>
           </form>
+
           <select className="select" onChange={handleSelectChange}>
             <option value="all">ALL</option>
             <option value="completed">Completed</option>
@@ -101,6 +138,7 @@ export function App() {
                 <button type="checkbox"></button>
                 {todo.text} {todo.completed ? "(Completed)" : "(Incomplete)"}{" "}
                 <button onClick={() => handleDelete(todo.id)}>Delete</button>
+                <button>Update</button>
               </li>
             ))}
           </ul>
