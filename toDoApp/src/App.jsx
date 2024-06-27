@@ -91,10 +91,16 @@ export function App() {
     console.log(text1);
     fetch(`http://localhost:8000/todos/`, {
       method: "GET",
-    }).then(() => {
-      const remainingTodos = todos.filter((todo) => todo.text === text1);
-      setTodos(remainingTodos);
-    });
+    })
+      .then((response) => response.json())
+      .then((newTodo) => {
+        let lala = newTodo;
+        const remainingTodos = lala.filter((todo) => todo.text.includes(text1));
+        setTodos(remainingTodos);
+      })
+      .finally(() => {
+        setValue("");
+      });
   }
 
   useEffect(() => {
