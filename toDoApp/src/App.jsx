@@ -45,6 +45,31 @@ export function App() {
     });
   }
 
+  function handleSelectChange(event) {
+    event.preventDefault();
+
+    console.log(event.target.value);
+    const results = event.target.value;
+
+    fetch(`http://localhost:8000/todos/`, {
+      method: "GET",
+    }).then(() => {
+      console.log(todos);
+      if (results === "all") {
+        // console.log(todos);
+        setTodos(todos);
+      } else if (results === "completed") {
+        const remainingTodos = todos.filter((todo) => todo.completed);
+        // console.log(todos);
+        setTodos(remainingTodos);
+      } else if (results === "incompleted") {
+        const remainingTodos = todos.filter((todo) => !todo.completed);
+        // console.log(todos);
+        setTodos(remainingTodos);
+      }
+    });
+  }
+
   useEffect(() => {
     fetch("http://localhost:8000/todos")
       .then((response) => response.json())
@@ -59,7 +84,7 @@ export function App() {
           <form>
             <input className="search" placeholder="Search note..." />
           </form>
-          <select className="select">
+          <select className="select" onChange={handleSelectChange}>
             <option value="all">ALL</option>
             <option value="completed">Completed</option>
             <option value="incompleted">Incompleted</option>
