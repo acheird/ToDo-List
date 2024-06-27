@@ -1,28 +1,18 @@
 {
   "todos": [
     {
-      "id": "4",
-      "text": "xcx",
-      "completed": false
-    },
-    {
-      "id": "5",
-      "text": "xcx",
-      "completed": false
-    },
-    {
-      "id": "6",
-      "text": "xcx",
-      "completed": false
-    },
-    {
       "id": "7",
       "text": "xcxghj",
       "completed": false
     },
     {
       "id": "8",
-      "text": "fdfd",
+      "text": "lala",
+      "completed": false
+    },
+    {
+      "id": "9",
+      "text": "xcxghj",
       "completed": false
     }
   ]

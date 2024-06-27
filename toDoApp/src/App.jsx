@@ -1,8 +1,40 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 export function App() {
   const [todos, setTodos] = useState([]);
+  let [value, setValue] = useState("");
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const newId =
+      todos.length > 0 ? Math.max(...todos.map((todo) => todo.id)) + 1 : 1;
+
+    fetch("http://localhost:8000/todos/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: newId.toString(),
+        text: value,
+        completed: false,
+      }),
+    })
+      .then((response) => response.json())
+      .then((newTodo) => setTodos([...todos, newTodo]))
+      .finally(() => {
+        setValue("");
+      });
+  }
 
   function handleDelete(todoId) {
     fetch(`http://localhost:8000/todos/${todoId}`, {
@@ -48,8 +80,43 @@ export function App() {
             ))}
           </ul>
         </div>
-        <button className="addButton">Add</button>
+        <button className="addButton" onClick={openModal}>
+          Add
+        </button>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="ExampleModal"
+        style={{
+          content: {
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            marginRight: "-50%",
+            transform: "translate(-50%, -50%)",
+          },
+        }}
+      >
+        <form onSubmit={handleSubmit}>
+          <input
+            placeholder="Input you note"
+            id="name"
+            type="text"
+            value={value}
+            onChange={(event) => setValue(event.target.value)}
+          />
+          <div>
+            <button onClick={closeModal}>CANCEL</button>
+          </div>
+          <div>
+            <button type="submit" disabled={value ? false : true}>
+              APPLY
+            </button>
+          </div>
+        </form>
+      </Modal>
     </>
   );
 }
