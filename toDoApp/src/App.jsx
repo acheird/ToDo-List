@@ -13,6 +13,26 @@ export function App() {
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
+  function handleChecked(todoId) {
+    console.log(todoId);
+    const todoIndex = todos.findIndex((todo) => todo.id === todoId);
+    fetch(`http://localhost:8000/todos/${todoId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // ...todos[todoIndex],
+        completed: !todos[todoIndex].completed,
+      }),
+    })
+      .then((response) => response.json())
+      .then((todo) => {
+        todos[todoIndex] = todo;
+        setTodos(todos);
+      });
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     const newId =
@@ -141,7 +161,12 @@ export function App() {
           <ul>
             {todos.map((todo) => (
               <li key={todo.id}>
-                <button type="checkbox"></button>
+                <input
+                  type="checkbox"
+                  value={todo.completed ? true : false}
+                  defaultChecked={todo.completed ? true : false}
+                  onClick={() => handleChecked(todo.id, value)}
+                ></input>
                 {todo.text} {todo.completed ? "(Completed)" : "(Incomplete)"}{" "}
                 <button onClick={() => handleDelete(todo.id)}>Delete</button>
                 <button>Update</button>

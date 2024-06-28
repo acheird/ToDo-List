@@ -2,17 +2,22 @@
   "todos": [
     {
       "id": "10",
-      "text": "xcxc",
-      "completed": false
+      "text": "lala",
+      "completed": true
     },
     {
       "id": "11",
-      "text": "lala",
+      "text": "nana",
       "completed": false
     },
     {
       "id": "12",
       "text": "fafa",
+      "completed": true
+    },
+    {
+      "id": "13",
+      "text": "mama",
       "completed": true
     }
   ]
