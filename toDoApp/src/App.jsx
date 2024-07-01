@@ -13,7 +13,7 @@ export function App() {
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
-  function handleChecked(todoId) {
+  function updateField(todoId, field) {
     console.log(todoId);
     const todoIndex = todos.findIndex((todo) => todo.id === todoId);
     fetch(`http://localhost:8000/todos/${todoId}`, {
@@ -23,7 +23,7 @@ export function App() {
       },
       body: JSON.stringify({
         // ...todos[todoIndex],
-        completed: !todos[todoIndex].completed,
+        [field]: !todos[todoIndex][field],
       }),
     })
       .then((response) => response.json())
@@ -132,20 +132,24 @@ export function App() {
   return (
     <>
       <div className="head">
-        <h1>TODO LIST</h1>
+        <div className="todolist">
+          <h1>TODO LIST</h1>
+        </div>
         <div className="header">
-          <form onSubmit={handleSearch}>
-            <input
-              className="search"
-              placeholder="Search note..."
-              type="text"
-              value={value}
-              onChange={(event) => setValue(event.target.value)}
-            />
-            <div>
-              <button type="submit">Search</button>
-            </div>
-          </form>
+          <div className="searhcBar">
+            <form onSubmit={handleSearch}>
+              <input
+                className="search"
+                placeholder="Search note..."
+                type="text"
+                value={value}
+                onChange={(event) => setValue(event.target.value)}
+              />
+              <div>
+                <button type="submit">Search</button>
+              </div>
+            </form>
+          </div>
 
           <select className="select" onChange={handleSelectChange}>
             <option value="all">ALL</option>
@@ -163,13 +167,16 @@ export function App() {
               <li key={todo.id}>
                 <input
                   type="checkbox"
-                  value={todo.completed ? true : false}
+                  value={todo.completed}
                   defaultChecked={todo.completed ? true : false}
-                  onClick={() => handleChecked(todo.id, value)}
+                  onClick={() => updateField(todo.id, "completed")}
                 ></input>
-                {todo.text} {todo.completed ? "(Completed)" : "(Incomplete)"}{" "}
+                {todo.text}
                 <button onClick={() => handleDelete(todo.id)}>Delete</button>
-                <button>Update</button>
+                {/* tha prepei na dixnei to modal otan patiseis to koubi */}
+                <button onClick={() => updateField(todo.id, "text")}>
+                  Update
+                </button>
               </li>
             ))}
           </ul>
@@ -205,7 +212,8 @@ export function App() {
             <button onClick={closeModal}>CANCEL</button>
           </div>
           <div>
-            <button type="submit" disabled={value ? false : true}>
+            {/* edo tha kalei tin fuction apo to prop pou tha peraseis onClick={() => updateField(todo.id, "text")} */}
+            <button type="submit" disabled={!!value}>
               APPLY
             </button>
           </div>
