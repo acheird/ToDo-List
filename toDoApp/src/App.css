@@ -1,10 +1,8 @@
 #root {
 
-  position: relative;
   margin: auto;
   width: 1400px;
   height: 710px;
-  
   background: #252525;
   
   }
@@ -14,16 +12,17 @@
   
   /* Auto layout */
   display: flex;
+    justify-content: center;
   flex-direction: column;
   align-items: center;
   padding: 40px 0px 0px;
   gap: 18px;
   
-  position: absolute;
+  position: relative;
   width: 750px;
   height: 135px;
   left: 325px;
-  top: 0px;
+  top: -20%;
   
   
   }
@@ -105,12 +104,25 @@
   width: 38px;
   height: 38px;
   
-  
+  background-image: url('./images/toogle.png');
   /* Inside auto layout */
   flex: none;
   order: 2;
   flex-grow: 0;
   
+  }
+
+
+  .body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+      width: 750px;
+  height: 575px;
+  top: -10%;
+  left: 325px;
+  gap: 0px;
+
   }
   
   .list{
@@ -122,15 +134,60 @@
   top: 30px;
   
   }
+
+  .list li{
+    display: inline-block;
+    width: 520px;
+height: 26px;
+gap: 0px;
+border: 1px 0px 0px 0px;
+opacity: 0px;
+color: #F7F7F7;
+list-style: none;
+
+border-bottom: 1px solid #6C63FF
+
+
+  }
+
+  .list-item{
+    
+    width: 57px;
+height: 18px;
+top: 4px;
+left: 463px;
+padding: 0px 8px 0px 8px;
+gap: 10px;
+opacity: 0px;
+
+  }
   
   .addButton{
     /* Add button */
-  
+    position: relative;
+  background-image: url('./images/add.png');
+  background-size:cover;
   width: 50px;
   height: 50px;
-  left: 692px;
-  top: 493px;
+  left: 80%;
+  top: 0%;
+
+
   
   
+  }
+
+
+  .deleteButton{
+    position: relative;
+    background-size:cover;
+    background-image: url('./images/delete1.svg');
+    width: 18px;
+    height: 18px;
+    top: 4px;
+    left:400px;
+    padding: 0px 8px 0px 8px;
+
+
   }
   

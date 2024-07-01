@@ -132,59 +132,52 @@ export function App() {
   return (
     <>
       <div className="head">
-        <div className="todolist">
-          <h1>TODO LIST</h1>
-        </div>
+        <h1>TODO LIST</h1>
         <div className="header">
-          <div className="searhcBar">
-            <form onSubmit={handleSearch}>
-              <input
-                className="search"
-                placeholder="Search note..."
-                type="text"
-                value={value}
-                onChange={(event) => setValue(event.target.value)}
-              />
-              <div>
-                <button type="submit">Search</button>
-              </div>
-            </form>
-          </div>
-
+          <form onSubmit={handleSearch}>
+            <input
+              className="search"
+              placeholder="Search note..."
+              type="text"
+              value={value}
+              onChange={(event) => setValue(event.target.value)}
+            />
+          </form>
           <select className="select" onChange={handleSelectChange}>
             <option value="all">ALL</option>
             <option value="completed">Completed</option>
             <option value="incompleted">Incompleted</option>
           </select>
-          <button className="toggle">Toggle</button>
+          <button className="toggle"></button>
         </div>
       </div>
-
       <div className="body">
         <div className="list">
           <ul>
             {todos.map((todo) => (
               <li key={todo.id}>
                 <input
+                  className="list-item"
                   type="checkbox"
                   value={todo.completed}
                   defaultChecked={todo.completed ? true : false}
                   onClick={() => updateField(todo.id, "completed")}
                 ></input>
                 {todo.text}
-                <button onClick={() => handleDelete(todo.id)}>Delete</button>
+                <button
+                  className="deleteButton"
+                  onClick={() => handleDelete(todo.id)}
+                ></button>
                 {/* tha prepei na dixnei to modal otan patiseis to koubi */}
-                <button onClick={() => updateField(todo.id, "text")}>
+                {/* <button onClick={() => updateField(todo.id, "text")}>
                   Update
-                </button>
+                </button> */}
               </li>
             ))}
           </ul>
         </div>
-        <button className="addButton" onClick={openModal}>
-          Add
-        </button>
       </div>
+      <button className="addButton" onClick={openModal}></button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
