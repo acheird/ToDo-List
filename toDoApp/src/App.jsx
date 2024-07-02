@@ -191,7 +191,7 @@ export function App() {
             <form onSubmit={handleSubmit}>
               <input
                 className="addNote"
-                placeholder="Input you note"
+                placeholder="Input you note..."
                 id="name"
                 type="text"
                 value={value}
