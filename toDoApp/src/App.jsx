@@ -14,6 +14,12 @@ export function App() {
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
+  useEffect(() => {
+    fetch("http://localhost:8000/todos")
+      .then((response) => response.json())
+      .then((data) => setTodos(data));
+  }, []);
+
   function updateField(todoId, field) {
     console.log(todoId);
     const todoIndex = todos.findIndex((todo) => todo.id === todoId);
@@ -23,7 +29,6 @@ export function App() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // ...todos[todoIndex],
         [field]: !todos[todoIndex][field],
       }),
     })
@@ -34,6 +39,7 @@ export function App() {
       });
   }
 
+  // Add a new task to the todo list
   function handleSubmit(event) {
     event.preventDefault();
     const newId =
@@ -57,6 +63,7 @@ export function App() {
       });
   }
 
+  // Delete a task from the todo list
   function handleDelete(todoId) {
     fetch(`http://localhost:8000/todos/${todoId}`, {
       method: "DELETE",
@@ -66,57 +73,19 @@ export function App() {
     });
   }
 
-  function handleSelectChange(event) {
-    event.preventDefault();
-    const results = event.target.value;
-
-    if (results === "all") {
-      // console.log(todos);
-      fetch(`http://localhost:8000/todos/`, {
-        method: "GET",
-      })
-        .then((response) => response.json())
-        .then((newTodo) => {
-          let lala = newTodo;
-          console.log(lala);
-          setTodos(lala);
-        });
-    } else if (results === "completed") {
-      fetch(`http://localhost:8000/todos/`, {
-        method: "GET",
-      })
-        .then((response) => response.json())
-        .then((newTodo) => {
-          let lala = newTodo;
-          const remainingTodos = lala.filter((todo) => todo.completed);
-          console.log(remainingTodos);
-          setTodos(remainingTodos);
-        });
-    } else if (results === "incompleted") {
-      fetch(`http://localhost:8000/todos/`, {
-        method: "GET",
-      })
-        .then((response) => response.json())
-        .then((newTodo) => {
-          let lala = newTodo;
-          const remainingTodos = lala.filter((todo) => !todo.completed);
-          console.log(remainingTodos);
-          setTodos(remainingTodos);
-        });
-    }
-  }
-
+  // Search for a task in the todo list
   function handleSearch(event) {
     event.preventDefault();
-    const text1 = value;
-    console.log(text1);
+    const searchingWord = value;
     fetch(`http://localhost:8000/todos/`, {
       method: "GET",
     })
       .then((response) => response.json())
       .then((newTodo) => {
-        let lala = newTodo;
-        const remainingTodos = lala.filter((todo) => todo.text.includes(text1));
+        let fetchedTodos = newTodo;
+        const remainingTodos = fetchedTodos.filter((todo) =>
+          todo.text.includes(searchingWord)
+        );
         setTodos(remainingTodos);
       })
       .finally(() => {
@@ -124,11 +93,30 @@ export function App() {
       });
   }
 
-  useEffect(() => {
-    fetch("http://localhost:8000/todos")
+  // Show tasks based on completed condition
+  function handleSelectChange(event) {
+    event.preventDefault();
+    const results = event.target.value;
+
+    fetch(`http://localhost:8000/todos/`, {
+      method: "GET",
+    })
       .then((response) => response.json())
-      .then((data) => setTodos(data));
-  }, []);
+      .then((newTodo) => {
+        let fetchedTodos = newTodo;
+        if (results === "all") {
+          setTodos(fetchedTodos);
+        } else if (results === "completed") {
+          const remainingTodos = fetchedTodos.filter((todo) => todo.completed);
+          console.log(remainingTodos);
+          setTodos(remainingTodos);
+        } else if (results === "incompleted") {
+          const remainingTodos = fetchedTodos.filter((todo) => !todo.completed);
+          console.log(remainingTodos);
+          setTodos(remainingTodos);
+        }
+      });
+  }
 
   return (
     <>
@@ -144,7 +132,7 @@ export function App() {
               onChange={(event) => setValue(event.target.value)}
             />
           </form>
-          <button className="search-button">
+          <button className="search-button" onClick={handleSearch}>
             <img src={search} />
           </button>
           <select className="select" onChange={handleSelectChange}>
@@ -221,7 +209,7 @@ export function App() {
                 <button
                   className="submitButton"
                   type="submit"
-                  disabled={!!value}
+                  // disabled={!!value}
                 >
                   APPLY
                 </button>
