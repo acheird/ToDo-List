@@ -23,7 +23,7 @@
     {
       "id": "9",
       "text": "lala",
-      "completed": false
+      "completed": true
     },
     {
       "id": "10",
@@ -43,6 +43,11 @@
     {
       "id": "13",
       "text": "xcxghj",
+      "completed": false
+    },
+    {
+      "id": "14",
+      "text": "xcxghjvcvx",
       "completed": false
     }
   ]

@@ -137,8 +137,8 @@ export function App() {
           </button>
           <select className="select" onChange={handleSelectChange}>
             <option value="all">ALL</option>
-            <option value="completed">Completed</option>
-            <option value="incompleted">Incompleted</option>
+            <option value="completed">COMPLETED</option>
+            <option value="incompleted">INCOMPLETED</option>
           </select>
           <button className="toggle"></button>
         </div>
@@ -155,16 +155,12 @@ export function App() {
                   defaultChecked={todo.completed ? true : false}
                   onClick={() => updateField(todo.id, "completed")}
                 ></input>
-                {todo.text}
+                {" " + todo.text}
                 {" #" + todo.id}
                 <button
                   className="deleteButton"
                   onClick={() => handleDelete(todo.id)}
                 ></button>
-                {/* tha prepei na dixnei to modal otan patiseis to koubi */}
-                {/* <button onClick={() => updateField(todo.id, "text")}>
-                  Update
-                </button> */}
               </li>
             ))}
           </ul>
@@ -209,7 +205,7 @@ export function App() {
                 <button
                   className="submitButton"
                   type="submit"
-                  // disabled={!!value}
+                  //disabled={!!value}
                 >
                   APPLY
                 </button>
