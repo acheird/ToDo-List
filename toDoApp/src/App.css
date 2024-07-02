@@ -2,7 +2,8 @@
 
   width: 750px;
   margin: 0 auto;
-background-color: red;
+background-color: #252525;
+;
   
   }
   
@@ -108,6 +109,7 @@ top: 30px; */
 
 .list li{
 
+  /* width: 520px; */
 display: flex;
 justify-content: space-between;
 margin-top: 15px;
@@ -161,22 +163,9 @@ border-bottom: 1px solid #6C63FF
 }
 
 
-.addButton{
-
-position:relative;
-background-image: url('./images/add.png');
-background-size:cover;
-width: 50px;
-height: 50px;
-left: 100%;
-background-color: Transparent;
- 
-}
-
-
-
 .newNote{
  
+  /* width: 520px; */
   display: flex;
   justify-content: center;
   font-family: Kanit;
@@ -243,3 +232,23 @@ background-color: Transparent;
     justify-content: space-between;
     
   }
+
+
+  .addButtonWrapper{
+    margin: auto;
+    display: flex;
+    justify-content:flex-end;
+  }
+
+
+.addButton{
+
+  /* position:relative; */
+  background-image: url('./images/add.png');
+  background-size:cover;
+  width: 50px;
+  height: 50px;
+  /* left: 100%; */
+  background-color: Transparent;
+  }
+  

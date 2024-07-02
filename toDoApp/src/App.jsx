@@ -174,7 +174,10 @@ export function App() {
           </ul>
         </div>
       </div>
-      <button className="addButton" onClick={openModal}></button>
+      <div className="addButtonWrapper">
+        <button className="addButton" onClick={openModal}></button>
+      </div>
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
