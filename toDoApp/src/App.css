@@ -1,7 +1,8 @@
 #root {
 
-  width: 1400px;
-  height: 710px;
+  width: 750px;
+  margin: 0 auto;
+background-color: red;
   
   }
   
@@ -12,12 +13,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0px 0px;
-  position: relative;
-  width: 750px;
-  height: 135px;
-  left: 325px;
-  top: -20%; 
+  padding: 40px 0px 0px 0px;
    
   
   }
@@ -26,28 +22,45 @@
   
   display: flex;
   gap: 16px;
-  width: 750px;
+  width: 100%;
   height: 38px;  
+  align-items: center;
+  
+  }
 
+  .select-wrapper{
+    display: flex;
+    align-items: center;
+  }
+
+  .form-Wrapper{
+    position: relative;
+    display: flex;
+    flex: 1;
+
+
+  }
+
+  .form-Wrapper form{
+   width: 100%;
   }
   
 .search{
 
   box-sizing: border-box;
   padding: 8px 16px;  
-  width: 595px;
   height: 38px;
   border: 1px solid #F7F7F7;
   border-radius: 5px;
+  width: 100%; 
 }
 
 .search-button{
 
   background-color: transparent;
   outline: none;
-  position: absolute;
-  right: 165px;
-  top: 149px;
+  margin-left: -50px ;
+  margin-top: -2px;
   width: 21px;
   height: 21px;
   
@@ -63,6 +76,7 @@ width: 130px;
 height: 38px;
 border-radius: 5px;
 background: #6C63FF;
+margin-right: 10px;
 
 }
   
@@ -77,25 +91,25 @@ background-image: url('./images/toogle.png');
 
 .body{
   margin: auto;
-  position: relative;
   display: flex;
   justify-content: center;
-  top: -10%;
-  left: 325px;
+
 
 }
   
 .list{
 
-width: 520px;
-height: 545px;
+width: 100%;
+/* height: 545px;
 left: 115px;
-top: 30px;
+top: 30px; */
 
 }
 
 .list li{
 
+display: flex;
+justify-content: space-between;
 margin-top: 15px;
 width: 520px;
 border: 1px;
@@ -124,9 +138,6 @@ border-bottom: 1px solid #6C63FF
 .list-item{
   width: 500px;
   height: 200px;
-  top: 200px;
-  left: 43px;
-  gap: 0px;
   opacity: 0px;
   font-family: Kanit;
   font-size: 20px;
@@ -146,8 +157,6 @@ border-bottom: 1px solid #6C63FF
   background-image: url('./images/delete1.svg');
   width: 18px;
   height: 18px;
-  top: 4px;
-  left:400px;
   padding: 0px 8px 0px 8px;
 }
 
@@ -210,6 +219,7 @@ background-color: Transparent;
   opacity: 0px;
   border: 1px solid #6C63FF
 
+
 }
 
 .submitButton{
@@ -219,7 +229,7 @@ background-color: Transparent;
   left: 823px;
   padding: 10px 22px 10px 22px;
   gap: 10px;
-  border-radius: 5px;
+  border-radius: 5px 0px 0px 0px;
   opacity: 0px;
   background: #6C63FF;
   

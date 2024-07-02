@@ -123,24 +123,28 @@ export function App() {
       <div className="head">
         <h1>TODO LIST</h1>
         <div className="header">
-          <form onSubmit={handleSearch}>
-            <input
-              className="search"
-              placeholder="Search note..."
-              type="text"
-              value={value}
-              onChange={(event) => setValue(event.target.value)}
-            />
-          </form>
-          <button className="search-button" onClick={handleSearch}>
-            <img src={search} />
-          </button>
-          <select className="select" onChange={handleSelectChange}>
-            <option value="all">ALL</option>
-            <option value="completed">COMPLETED</option>
-            <option value="incompleted">INCOMPLETED</option>
-          </select>
-          <button className="toggle"></button>
+          <div className="form-Wrapper">
+            <form onSubmit={handleSearch}>
+              <input
+                className="search"
+                placeholder="Search note..."
+                type="text"
+                value={value}
+                onChange={(event) => setValue(event.target.value)}
+              />
+            </form>
+            <button className="search-button" onClick={handleSearch}>
+              <img src={search} />
+            </button>
+          </div>
+          <div className="select-wrapper">
+            <select className="select" onChange={handleSelectChange}>
+              <option value="all">ALL</option>
+              <option value="completed">COMPLETED</option>
+              <option value="incompleted">INCOMPLETED</option>
+            </select>
+            <button className="toggle"></button>
+          </div>
         </div>
       </div>
       <div className="body">
@@ -148,19 +152,23 @@ export function App() {
           <ul>
             {todos.map((todo) => (
               <li key={todo.id}>
-                <input
-                  className="list-item"
-                  type="checkbox"
-                  value={todo.completed}
-                  defaultChecked={todo.completed ? true : false}
-                  onClick={() => updateField(todo.id, "completed")}
-                ></input>
-                {" " + todo.text}
-                {" #" + todo.id}
-                <button
-                  className="deleteButton"
-                  onClick={() => handleDelete(todo.id)}
-                ></button>
+                <div>
+                  <input
+                    className="list-item"
+                    type="checkbox"
+                    value={todo.completed}
+                    defaultChecked={todo.completed ? true : false}
+                    onClick={() => updateField(todo.id, "completed")}
+                  ></input>
+                  {" " + todo.text}
+                  {" #" + todo.id}
+                </div>
+                <div>
+                  <button
+                    className="deleteButton"
+                    onClick={() => handleDelete(todo.id)}
+                  ></button>
+                </div>
               </li>
             ))}
           </ul>
