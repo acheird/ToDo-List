@@ -53,6 +53,7 @@
   
   box-sizing: border-box;
   
+  
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -73,6 +74,20 @@
   flex-grow: 0;
   
   }
+
+  .search-button{
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    position: absolute;
+    right: 165px;
+    top: 158px;
+    width: 21px;
+    height: 21px;
+    
+    
+  }
+
   
   .select{
     /* Select */
@@ -148,6 +163,26 @@ list-style: none;
 border-bottom: 1px solid #6C63FF
 
 
+
+  }
+
+  .list li input[type="checkbox"]{
+    
+    width: 16px;
+    height: 16px;
+    border-radius: 2px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+   opacity: 0px;
+    color: #6C63FF; 
+
+    outline: 1px solid #6C63FF
+
+  }
+
+  .list li input[type="checkbox"]:checked{
+    
+    background: #6C63FF;
+
   }
 
   .list-item{
@@ -190,4 +225,99 @@ opacity: 0px;
 
 
   }
+
+
+  .newNote{
+    display: flex;
+    justify-content: center;
+    font-family: Kanit;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    width: 440px;
+    padding: 10px 20px 10px 20px;
+    margin-top: 10px;
+  }
+
+  .modalContainer{
+    width: 500px;
+    height: 289px;
+    top: 118px;
+    left: 450px;
+    border: 1px solid white;
+    background:#252525;
+    
+  }
   
+
+  .modalForm{
+    /* Header */
+  
+  /* Auto layout */
+  display: flex;
+  position: relative;
+    display: flex;
+    justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  border-radius: 30px;
+  
+  
+  }
+
+  .addNote{
+    width: 420px;
+    height: 30px;
+    top: 185px;
+    left: 480px;
+    padding: 10px 16px 8px 16px;
+    margin-top: 10px;
+    gap: 436px;
+    border-radius: 5px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    border: 1px solid #F7F7F7
+  }
+
+  .cancelButton{
+    width: 110px;
+    height: 38px;
+    top: 351px;
+    left: 480px;
+    bottom: 0;
+    padding: 10px 22px 10px 22px;
+    gap: 10px;
+    border-radius: 5px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    
+    
+  }
+
+  .submitButton{
+    width: 97px;
+    height: 38px;
+    top: 351px;
+    left: 823px;
+    padding: 10px 22px 10px 22px;
+    gap: 10px;
+    border-radius: 5px 0px 0px 0px;
+    opacity: 0px;
+    background: #6C63FF;
+    
+  }
+
+  .newNoteBtns{
+    margin-top: 120px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex; 
+    justify-content: space-between;
+    
+  }

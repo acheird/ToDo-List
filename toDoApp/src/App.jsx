@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
+import search from "./images/search.png";
 
 Modal.setAppElement("#root");
 
@@ -143,6 +144,9 @@ export function App() {
               onChange={(event) => setValue(event.target.value)}
             />
           </form>
+          <button className="search-button">
+            <img src={search} />
+          </button>
           <select className="select" onChange={handleSelectChange}>
             <option value="all">ALL</option>
             <option value="completed">Completed</option>
@@ -164,6 +168,7 @@ export function App() {
                   onClick={() => updateField(todo.id, "completed")}
                 ></input>
                 {todo.text}
+                {" #" + todo.id}
                 <button
                   className="deleteButton"
                   onClick={() => handleDelete(todo.id)}
@@ -190,27 +195,40 @@ export function App() {
             bottom: "auto",
             marginRight: "-50%",
             transform: "translate(-50%, -50%)",
+            border: "1px solid white",
+            padding: "0px",
+            "border-radius": "30px",
           },
         }}
       >
-        <form onSubmit={handleSubmit}>
-          <input
-            placeholder="Input you note"
-            id="name"
-            type="text"
-            value={value}
-            onChange={(event) => setValue(event.target.value)}
-          />
-          <div>
-            <button onClick={closeModal}>CANCEL</button>
+        <div className="modalContainer">
+          <div className="newNote">NEW NOTE</div>
+          <div className="modalForm">
+            <form onSubmit={handleSubmit}>
+              <input
+                className="addNote"
+                placeholder="Input you note"
+                id="name"
+                type="text"
+                value={value}
+                onChange={(event) => setValue(event.target.value)}
+              />
+              <div className="newNoteBtns">
+                <button className="cancelButton" onClick={closeModal}>
+                  CANCEL
+                </button>
+
+                <button
+                  className="submitButton"
+                  type="submit"
+                  disabled={!!value}
+                >
+                  APPLY
+                </button>
+              </div>
+            </form>
           </div>
-          <div>
-            {/* edo tha kalei tin fuction apo to prop pou tha peraseis onClick={() => updateField(todo.id, "text")} */}
-            <button type="submit" disabled={!!value}>
-              APPLY
-            </button>
-          </div>
-        </form>
+        </div>
       </Modal>
     </>
   );
