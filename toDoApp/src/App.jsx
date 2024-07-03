@@ -8,6 +8,7 @@ import {
   handleUpdateProgress,
   handleSearch,
   handleDelete,
+  handleSelectChange,
 } from "./functions/functions";
 
 Modal.setAppElement("#root");
@@ -49,29 +50,11 @@ export function App() {
     handleDelete(todoId, todos, setTodos);
   };
 
-  // Show tasks based on completed condition
-  function handleSelectChange(event) {
+  // Show tasks filtered based on completed condition
+  function filterTodos(event) {
     event.preventDefault();
     const results = event.target.value;
-
-    fetch(`http://localhost:8000/todos/`, {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((newTodo) => {
-        let fetchedTodos = newTodo;
-        if (results === "all") {
-          setTodos(fetchedTodos);
-        } else if (results === "completed") {
-          const remainingTodos = fetchedTodos.filter((todo) => todo.completed);
-          console.log(remainingTodos);
-          setTodos(remainingTodos);
-        } else if (results === "incompleted") {
-          const remainingTodos = fetchedTodos.filter((todo) => !todo.completed);
-          console.log(remainingTodos);
-          setTodos(remainingTodos);
-        }
-      });
+    handleSelectChange(results, todos, setTodos);
   }
 
   return (
@@ -94,7 +77,7 @@ export function App() {
             </button>
           </div>
           <div className="select-wrapper">
-            <select className="select" onChange={handleSelectChange}>
+            <select className="select" onChange={filterTodos}>
               <option value="all">ALL</option>
               <option value="completed">COMPLETED</option>
               <option value="incompleted">INCOMPLETED</option>

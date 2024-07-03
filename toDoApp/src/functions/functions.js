@@ -96,3 +96,33 @@ export const handleDelete = async (todoId, todos, setTodos) => {
             console.error("An error occurred:", error);
         }
   }
+
+
+  export const handleSelectChange = async (value,todos,setTodos) => {
+     const results = value;
+    try{
+        const response = await fetch(`http://localhost:8000/todos/`, {
+            method: "GET",
+          });
+
+            if(response.ok) {
+                const fetchedTodos = await response.json();
+                if (results === "all") {
+                    setTodos(fetchedTodos);
+                  } else if (results === "completed") {
+                    const remainingTodos = fetchedTodos.filter((todo) => todo.completed);
+                    console.log(remainingTodos);
+                    setTodos(remainingTodos);
+                  } else if (results === "incompleted") {
+                    const remainingTodos = fetchedTodos.filter((todo) => !todo.completed);
+                    console.log(remainingTodos);
+                    setTodos(remainingTodos);
+                  }
+        } else {
+            console.error("Error updating todo:", response.statusText);
+            }
+        } catch (error) {
+            console.error("An error occurred:", error);
+        }
+  }
+

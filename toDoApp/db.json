@@ -3,12 +3,12 @@
     {
       "id": "11",
       "text": "kkkk",
-      "completed": false
+      "completed": true
     },
     {
       "id": "12",
       "text": "fgdfg",
-      "completed": false
+      "completed": true
     },
     {
       "id": "13",
