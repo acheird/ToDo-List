@@ -53,6 +53,10 @@
 .form-Wrapper form{
   width: 100%;
 }
+
+.form-Wrapper form input:focus{
+  background-color: black;
+}
   
 .search{
 
@@ -89,6 +93,15 @@
   margin-right: 10px;
 
 }
+
+.select option{
+  background-color: white;
+  color: #6C63FF;
+}
+
+/* select option:hover {
+  background-color: #198754;
+} */
   
 .toggle{
 

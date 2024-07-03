@@ -8,8 +8,8 @@ import {
   handleUpdateProgress,
   handleSearch,
   handleDelete,
-  handleSelectChange,
-} from "./functions/functions";
+  handleFiltered,
+} from "./services/TodoService";
 
 Modal.setAppElement("#root");
 
@@ -54,7 +54,7 @@ export function App() {
   function filterTodos(event) {
     event.preventDefault();
     const results = event.target.value;
-    handleSelectChange(results, todos, setTodos);
+    handleFiltered(results, todos, setTodos);
   }
 
   return (
