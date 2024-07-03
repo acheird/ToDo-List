@@ -4,11 +4,11 @@ import Modal from "react-modal";
 import search from "./images/search.png";
 import detective from "./images/detective.png";
 import {
-  handleTodoSubmit,
-  handleUpdateProgress,
-  handleSearch,
-  handleDelete,
-  handleFiltered,
+  addTodo,
+  updateProgress,
+  searchTodo,
+  deleteTodo,
+  filterTodo,
 } from "./services/TodoService";
 
 Modal.setAppElement("#root");
@@ -28,33 +28,120 @@ export function App() {
       .then((data) => setTodos(data));
   }, []);
 
-  // Update todo task progress (Completed/Incompleted)
-  const progressUpdate = (todoId, field) => {
-    handleUpdateProgress(todoId, field, todos, setTodos);
-  };
-
   // Add a new task to the todo list
-  const addTodo = (event) => {
+  async function handleAddTodo(event) {
     event.preventDefault();
-    handleTodoSubmit(value, todos, setTodos, setValue);
-  };
+
+    const newId =
+      todos.length > 0 ? Math.max(...todos.map((todo) => todo.id)) + 1 : 1;
+    try {
+      const response = await addTodo({
+        id: newId.toString(),
+        text: value,
+        completed: false,
+      });
+
+      if (response.ok) {
+        const newTodo = await response.json();
+        setTodos([...todos, newTodo]);
+        setValue(""); // Clear the input value
+      } else {
+        console.error("Error adding todo:", response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  }
 
   // Search for a task in the todo list
-  const searchTodo = (event) => {
+  async function handleSearch(event) {
     event.preventDefault();
-    handleSearch(value, setTodos, setValue);
-  };
+    const searchingWord = value;
+    try {
+      const response = await searchTodo();
+
+      if (response.ok) {
+        const newTodos = await response.json();
+        const remainingTodos = newTodos.filter((todo) =>
+          todo.text.includes(searchingWord)
+        );
+        setTodos(remainingTodos);
+        setValue("");
+      } else {
+        console.error("Error updating todo:", response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  }
+
+  // Update todo task progress (Completed/Incompleted)
+  async function handleUpdateProgress(todoId, field) {
+    const todoIndex = todos.findIndex((todo) => todo.id === todoId);
+    try {
+      const response = await updateProgress(
+        {
+          [field]: !todos[todoIndex][field],
+        },
+        todoId
+      );
+
+      if (response.ok) {
+        const newTodo = await response.json();
+        todos[todoIndex] = newTodo;
+        setTodos(todos);
+      } else {
+        console.error("Error updating todo:", response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  }
 
   // Delete a task from the todo list
-  const deleteTodo = (todoId) => {
-    handleDelete(todoId, todos, setTodos);
-  };
+  async function handleDelete(todoId) {
+    try {
+      console.log(todoId);
+      const response = await deleteTodo(todoId);
+      console.log(response);
+
+      if (response.ok) {
+        const remainingTodos = todos.filter((todo) => todo.id !== todoId);
+        setTodos(remainingTodos);
+      } else {
+        console.error("Error updating todo:", response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  }
 
   // Show tasks filtered based on completed condition
-  function filterTodos(event) {
+  async function handleFiltered(event) {
     event.preventDefault();
     const results = event.target.value;
-    handleFiltered(results, todos, setTodos);
+    try {
+      const response = await filterTodo();
+
+      if (response.ok) {
+        const fetchedTodos = await response.json();
+        if (results === "all") {
+          setTodos(fetchedTodos);
+        } else if (results === "completed") {
+          const remainingTodos = fetchedTodos.filter((todo) => todo.completed);
+          console.log(remainingTodos);
+          setTodos(remainingTodos);
+        } else if (results === "incompleted") {
+          const remainingTodos = fetchedTodos.filter((todo) => !todo.completed);
+          console.log(remainingTodos);
+          setTodos(remainingTodos);
+        }
+      } else {
+        console.error("Error updating todo:", response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   }
 
   return (
@@ -63,7 +150,7 @@ export function App() {
         <h1>TODO LIST</h1>
         <div className="header">
           <div className="form-Wrapper">
-            <form onSubmit={searchTodo}>
+            <form onSubmit={handleSearch}>
               <input
                 className="search"
                 placeholder="Search note..."
@@ -72,12 +159,12 @@ export function App() {
                 onChange={(event) => setValue(event.target.value)}
               />
             </form>
-            <button className="search-button" onClick={searchTodo}>
+            <button className="search-button" onClick={handleSearch}>
               <img src={search} />
             </button>
           </div>
           <div className="select-wrapper">
-            <select className="select" onChange={filterTodos}>
+            <select className="select" onChange={handleFiltered}>
               <option value="all">ALL</option>
               <option value="completed">COMPLETED</option>
               <option value="incompleted">INCOMPLETED</option>
@@ -98,7 +185,9 @@ export function App() {
                         type="checkbox"
                         value={todo.completed}
                         defaultChecked={todo.completed ? true : false}
-                        onClick={() => progressUpdate(todo.id, "completed")}
+                        onClick={() =>
+                          handleUpdateProgress(todo.id, "completed")
+                        }
                       ></input>
                     </div>
                   </div>
@@ -109,7 +198,7 @@ export function App() {
                   <div>
                     <button
                       className="deleteButton"
-                      onClick={() => deleteTodo(todo.id)}
+                      onClick={() => handleDelete(todo.id)}
                     ></button>
                   </div>
                 </li>
@@ -147,7 +236,7 @@ export function App() {
         <div className="modalContainer">
           <div className="newNote">NEW NOTE</div>
           <div className="modalForm">
-            <form onSubmit={addTodo}>
+            <form onSubmit={handleAddTodo}>
               <input
                 className="addNote"
                 placeholder="Input you note..."

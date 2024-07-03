@@ -1,49 +1,9 @@
 {
   "todos": [
     {
-      "id": "7",
-      "text": "new",
-      "completed": true
-    },
-    {
-      "id": "8",
-      "text": "nea",
-      "completed": true
-    },
-    {
-      "id": "9",
-      "text": "lala",
-      "completed": true
-    },
-    {
-      "id": "11",
-      "text": "kkkk",
-      "completed": false
-    },
-    {
-      "id": "12",
-      "text": "fgdfg",
-      "completed": false
-    },
-    {
-      "id": "13",
-      "text": "xcxghj",
-      "completed": false
-    },
-    {
-      "id": "14",
-      "text": "NOTE",
-      "completed": false
-    },
-    {
-      "id": "15",
-      "text": "cxv",
-      "completed": false
-    },
-    {
       "id": "16",
       "text": "jnjkkll",
-      "completed": false
+      "completed": true
     },
     {
       "id": "17",
@@ -52,7 +12,12 @@
     },
     {
       "id": "18",
-      "text": "jaja",
+      "text": "ngfnvd f ",
+      "completed": false
+    },
+    {
+      "id": "19",
+      "text": "f dms fm",
       "completed": false
     }
   ]
