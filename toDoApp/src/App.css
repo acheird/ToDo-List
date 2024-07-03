@@ -142,6 +142,10 @@ margin-top: 15px;
 
 }
 
+.list li:last-child{
+  border-bottom: none;
+}
+
 .list li input[type="checkbox"]{
  
   display: inline-block;
