@@ -1,6 +1,11 @@
 {
   "todos": [
     {
+      "id": "10",
+      "text": "nai",
+      "completed": false
+    },
+    {
       "id": "11",
       "text": "kkkk",
       "completed": true
@@ -8,7 +13,7 @@
     {
       "id": "12",
       "text": "fgdfg",
-      "completed": true
+      "completed": false
     },
     {
       "id": "13",
