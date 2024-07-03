@@ -154,14 +154,17 @@ export function App() {
             <ul>
               {todos.map((todo) => (
                 <li key={todo.id}>
-                  <div>
-                    <input
-                      className="list-item"
-                      type="checkbox"
-                      value={todo.completed}
-                      defaultChecked={todo.completed ? true : false}
-                      onClick={() => updateField(todo.id, "completed")}
-                    ></input>
+                  <div className="listElement">
+                    <div>
+                      <input
+                        type="checkbox"
+                        value={todo.completed}
+                        defaultChecked={todo.completed ? true : false}
+                        onClick={() => updateField(todo.id, "completed")}
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="textWrapper">
                     {" " + todo.text}
                     {" #" + todo.id}
                   </div>

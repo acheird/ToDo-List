@@ -132,13 +132,17 @@ top: 30px; */
 
 }
 
+.listElement{
+  width: 35px;
+}
+
 .list li{
 
   /* width: 520px; */
 display: flex;
 justify-content: space-between;
 margin-top: 15px;
-width: 520px;
+width: 600px;
 border: 1px;
 list-style: none;
 border-bottom: 1px solid #6C63FF
@@ -146,7 +150,7 @@ border-bottom: 1px solid #6C63FF
 }
 
 .list li input[type="checkbox"]{
-  
+  display: inline-block;
   width: 26px;
   height: 26px;
   top:120px;
@@ -163,8 +167,9 @@ border-bottom: 1px solid #6C63FF
 }
 
 .list li .textWrapper{
-  display: inline-block;
-  /* font-family: Kanit; */
+  display: flex;
+    align-items: center;
+  width: 100%;
   font-size: 18px;
   line-height: 20px;
   padding: 0px 0px 8px 8px;
@@ -174,6 +179,7 @@ border-bottom: 1px solid #6C63FF
 }
 
 .list li .deleteButton{
+  display: inline-block;
   position: relative;
   background-size:cover;
   background-color: transparent;
