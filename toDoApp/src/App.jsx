@@ -38,7 +38,7 @@ export function App() {
   };
 
   // Search for a task in the todo list
-  const todoSearch = (event) => {
+  const searchTodo = (event) => {
     event.preventDefault();
     handleSearch(value, setTodos, setValue);
   };
@@ -84,7 +84,7 @@ export function App() {
         <h1>TODO LIST</h1>
         <div className="header">
           <div className="form-Wrapper">
-            <form onSubmit={todoSearch}>
+            <form onSubmit={searchTodo}>
               <input
                 className="search"
                 placeholder="Search note..."
@@ -93,7 +93,7 @@ export function App() {
                 onChange={(event) => setValue(event.target.value)}
               />
             </form>
-            <button className="search-button" onClick={todoSearch}>
+            <button className="search-button" onClick={searchTodo}>
               <img src={search} />
             </button>
           </div>
