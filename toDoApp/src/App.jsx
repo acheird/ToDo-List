@@ -3,7 +3,11 @@ import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import search from "./images/search.png";
 import detective from "./images/detective.png";
-import { handleSubmit } from "./functions/functions";
+import {
+  handleTodoSubmit,
+  handleUpdateProgress,
+  handleSearch,
+} from "./functions/functions";
 
 Modal.setAppElement("#root");
 
@@ -22,29 +26,21 @@ export function App() {
       .then((data) => setTodos(data));
   }, []);
 
-  function updateField(todoId, field) {
-    console.log(todoId);
-    const todoIndex = todos.findIndex((todo) => todo.id === todoId);
-    fetch(`http://localhost:8000/todos/${todoId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        [field]: !todos[todoIndex][field],
-      }),
-    })
-      .then((response) => response.json())
-      .then((todo) => {
-        todos[todoIndex] = todo;
-        setTodos(todos);
-      });
-  }
+  // Update todo task progress (Completed/Incompleted)
+  const progressUpdate = (todoId, field) => {
+    handleUpdateProgress(todoId, field, todos, setTodos);
+  };
 
   // Add a new task to the todo list
-  const handleFormSubmit = (event) => {
+  const addTodo = (event) => {
     event.preventDefault();
-    handleSubmit(value, todos, setTodos, setValue);
+    handleTodoSubmit(value, todos, setTodos, setValue);
+  };
+
+  // Search for a task in the todo list
+  const todoSearch = (event) => {
+    event.preventDefault();
+    handleSearch(value, setTodos, setValue);
   };
 
   // Delete a task from the todo list
@@ -55,26 +51,6 @@ export function App() {
       const remainingTodos = todos.filter((todo) => todo.id !== todoId);
       setTodos(remainingTodos);
     });
-  }
-
-  // Search for a task in the todo list
-  function handleSearch(event) {
-    event.preventDefault();
-    const searchingWord = value;
-    fetch(`http://localhost:8000/todos/`, {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((newTodo) => {
-        let fetchedTodos = newTodo;
-        const remainingTodos = fetchedTodos.filter((todo) =>
-          todo.text.includes(searchingWord)
-        );
-        setTodos(remainingTodos);
-      })
-      .finally(() => {
-        setValue("");
-      });
   }
 
   // Show tasks based on completed condition
@@ -108,7 +84,7 @@ export function App() {
         <h1>TODO LIST</h1>
         <div className="header">
           <div className="form-Wrapper">
-            <form onSubmit={handleSearch}>
+            <form onSubmit={todoSearch}>
               <input
                 className="search"
                 placeholder="Search note..."
@@ -117,7 +93,7 @@ export function App() {
                 onChange={(event) => setValue(event.target.value)}
               />
             </form>
-            <button className="search-button" onClick={handleSearch}>
+            <button className="search-button" onClick={todoSearch}>
               <img src={search} />
             </button>
           </div>
@@ -143,7 +119,7 @@ export function App() {
                         type="checkbox"
                         value={todo.completed}
                         defaultChecked={todo.completed ? true : false}
-                        onClick={() => updateField(todo.id, "completed")}
+                        onClick={() => progressUpdate(todo.id, "completed")}
                       ></input>
                     </div>
                   </div>
@@ -192,7 +168,7 @@ export function App() {
         <div className="modalContainer">
           <div className="newNote">NEW NOTE</div>
           <div className="modalForm">
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={addTodo}>
               <input
                 className="addNote"
                 placeholder="Input you note..."

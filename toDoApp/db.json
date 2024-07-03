@@ -8,7 +8,7 @@
     {
       "id": "2",
       "text": "mama",
-      "completed": false
+      "completed": true
     },
     {
       "id": "3",
@@ -23,6 +23,11 @@
     {
       "id": "5",
       "text": "nana",
+      "completed": false
+    },
+    {
+      "id": "6",
+      "text": "kakakakakaka",
       "completed": false
     }
   ]
