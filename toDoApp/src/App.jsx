@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import search from "./images/search.png";
+import detective from "./images/detective.png";
 
 Modal.setAppElement("#root");
 
@@ -149,29 +150,35 @@ export function App() {
       </div>
       <div className="body">
         <div className="list">
-          <ul>
-            {todos.map((todo) => (
-              <li key={todo.id}>
-                <div>
-                  <input
-                    className="list-item"
-                    type="checkbox"
-                    value={todo.completed}
-                    defaultChecked={todo.completed ? true : false}
-                    onClick={() => updateField(todo.id, "completed")}
-                  ></input>
-                  {" " + todo.text}
-                  {" #" + todo.id}
-                </div>
-                <div>
-                  <button
-                    className="deleteButton"
-                    onClick={() => handleDelete(todo.id)}
-                  ></button>
-                </div>
-              </li>
-            ))}
-          </ul>
+          {todos.length ? (
+            <ul>
+              {todos.map((todo) => (
+                <li key={todo.id}>
+                  <div>
+                    <input
+                      className="list-item"
+                      type="checkbox"
+                      value={todo.completed}
+                      defaultChecked={todo.completed ? true : false}
+                      onClick={() => updateField(todo.id, "completed")}
+                    ></input>
+                    {" " + todo.text}
+                    {" #" + todo.id}
+                  </div>
+                  <div>
+                    <button
+                      className="deleteButton"
+                      onClick={() => handleDelete(todo.id)}
+                    ></button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div>
+              <img className="emptyListImage" src={detective} />
+            </div>
+          )}
         </div>
       </div>
       <div className="addButtonWrapper">

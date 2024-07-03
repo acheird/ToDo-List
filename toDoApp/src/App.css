@@ -1,7 +1,7 @@
 #root {
 
   width: 750px;
-  margin: 0 auto;
+  margin:  0px auto auto auto;
 background-color: #252525;
 ;
   
@@ -17,6 +17,19 @@ background-color: #252525;
   padding: 40px 0px 0px 0px;
    
   
+  }
+
+  .head h1{
+    /* width: 122px; */
+/* height: 39px; */
+
+font-size: 26px;
+font-weight: 500;
+line-height: 38.87px;
+text-align: left;
+
+
+
   }
   
 .header{
@@ -97,6 +110,18 @@ background-image: url('./images/toogle.png');
 
 
 }
+
+.emptyListImage{
+  width: 221px;
+  height: 174px;
+  left: 149px;
+  gap: 0px;
+  opacity: 0px;
+  margin: 30px auto;  
+  display: flex;
+  
+
+}
   
 .list{
 
@@ -137,16 +162,12 @@ border-bottom: 1px solid #6C63FF
 
 }
 
-.list-item{
-  width: 500px;
-  height: 200px;
-  opacity: 0px;
-  font-family: Kanit;
-  font-size: 20px;
-  font-weight: 500;
+.list li .textWrapper{
+  display: inline-block;
+  /* font-family: Kanit; */
+  font-size: 18px;
   line-height: 20px;
-  text-align: right;
-  background: #F7F7F7;
+  padding: 0px 0px 8px 8px;
 
 
 
@@ -243,11 +264,17 @@ border-bottom: 1px solid #6C63FF
 
 .addButton{
 
-  /* position:relative; */
+  position:fixed;
   background-image: url('./images/add.png');
   background-size:cover;
   width: 50px;
   height: 50px;
+
+top: 700px;
+
+gap: 0px;
+opacity: 0px;
+
   /* left: 100%; */
   background-color: Transparent;
   }
