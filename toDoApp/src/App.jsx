@@ -7,6 +7,7 @@ import {
   handleTodoSubmit,
   handleUpdateProgress,
   handleSearch,
+  handleDelete,
 } from "./functions/functions";
 
 Modal.setAppElement("#root");
@@ -44,14 +45,9 @@ export function App() {
   };
 
   // Delete a task from the todo list
-  function handleDelete(todoId) {
-    fetch(`http://localhost:8000/todos/${todoId}`, {
-      method: "DELETE",
-    }).then(() => {
-      const remainingTodos = todos.filter((todo) => todo.id !== todoId);
-      setTodos(remainingTodos);
-    });
-  }
+  const deleteTodo = (todoId) => {
+    handleDelete(todoId, todos, setTodos);
+  };
 
   // Show tasks based on completed condition
   function handleSelectChange(event) {
@@ -130,7 +126,7 @@ export function App() {
                   <div>
                     <button
                       className="deleteButton"
-                      onClick={() => handleDelete(todo.id)}
+                      onClick={() => deleteTodo(todo.id)}
                     ></button>
                   </div>
                 </li>
