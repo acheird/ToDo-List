@@ -221,7 +221,7 @@ export function App() {
         contentLabel="ExampleModal"
         style={{
           content: {
-            top: "50%",
+            top: "30%",
             left: "50%",
             right: "auto",
             bottom: "auto",
@@ -253,7 +253,7 @@ export function App() {
                 <button
                   className="submitButton"
                   type="submit"
-                  //disabled={!!value}
+                  // disabled={value ? false : true}
                 >
                   APPLY
                 </button>
