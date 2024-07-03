@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import search from "./images/search.png";
 import detective from "./images/detective.png";
+import { handleSubmit } from "./functions/functions";
 
 Modal.setAppElement("#root");
 
@@ -41,28 +42,10 @@ export function App() {
   }
 
   // Add a new task to the todo list
-  function handleSubmit(event) {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    const newId =
-      todos.length > 0 ? Math.max(...todos.map((todo) => todo.id)) + 1 : 1;
-
-    fetch("http://localhost:8000/todos/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: newId.toString(),
-        text: value,
-        completed: false,
-      }),
-    })
-      .then((response) => response.json())
-      .then((newTodo) => setTodos([...todos, newTodo]))
-      .finally(() => {
-        setValue("");
-      });
-  }
+    handleSubmit(value, todos, setTodos, setValue);
+  };
 
   // Delete a task from the todo list
   function handleDelete(todoId) {
@@ -209,7 +192,7 @@ export function App() {
         <div className="modalContainer">
           <div className="newNote">NEW NOTE</div>
           <div className="modalForm">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleFormSubmit}>
               <input
                 className="addNote"
                 placeholder="Input you note..."
