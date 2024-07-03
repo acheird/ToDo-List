@@ -2,9 +2,8 @@
 
   width: 750px;
   margin:  0px auto auto auto;
-background-color: #252525;
-;
-  
+  background-color: #252525;
+
   }
   
 .head{
@@ -16,21 +15,16 @@ background-color: #252525;
   align-items: center;
   padding: 40px 0px 0px 0px;
    
-  
-  }
+}
 
   .head h1{
-    /* width: 122px; */
-/* height: 39px; */
 
-font-size: 26px;
-font-weight: 500;
-line-height: 38.87px;
-text-align: left;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 38.87px;
+  text-align: left;
 
-
-
-  }
+}
   
 .header{
   
@@ -40,24 +34,25 @@ text-align: left;
   height: 38px;  
   align-items: center;
   
-  }
+}
 
-  .select-wrapper{
-    display: flex;
-    align-items: center;
-  }
+.select-wrapper{
 
-  .form-Wrapper{
-    position: relative;
-    display: flex;
-    flex: 1;
+  display: flex;
+  align-items: center;
 
+}
 
-  }
+.form-Wrapper{
+  position: relative;
+  display: flex;
+  flex: 1;
 
-  .form-Wrapper form{
-   width: 100%;
-  }
+}
+
+.form-Wrapper form{
+  width: 100%;
+}
   
 .search{
 
@@ -67,6 +62,7 @@ text-align: left;
   border: 1px solid #F7F7F7;
   border-radius: 5px;
   width: 100%; 
+
 }
 
 .search-button{
@@ -83,31 +79,31 @@ text-align: left;
   
 .select{
   
-flex-direction: column;
-align-items: flex-start;
-padding: 10px;
-width: 130px;
-height: 38px;
-border-radius: 5px;
-background: #6C63FF;
-margin-right: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  width: 130px;
+  height: 38px;
+  border-radius: 5px;
+  background: #6C63FF;
+  margin-right: 10px;
 
 }
   
 .toggle{
 
-width: 38px;
-height: 38px;
-background-image: url('./images/toogle.png');
+  width: 38px;
+  height: 38px;
+  background-image: url('./images/toogle.png');
 
 }
 
 
 .body{
+  
   margin: auto;
   display: flex;
   justify-content: center;
-
 
 }
 
@@ -118,38 +114,36 @@ background-image: url('./images/toogle.png');
   gap: 0px;
   opacity: 0px;
   margin: 30px auto;  
-  display: flex;
-  
+  display: flex; 
 
 }
   
 .list{
 
 width: 100%;
-/* height: 545px;
-left: 115px;
-top: 30px; */
-
+margin-top: 15px;
 }
 
 .listElement{
+
   width: 35px;
+
 }
 
 .list li{
 
-  /* width: 520px; */
-display: flex;
-justify-content: space-between;
-margin-top: 15px;
-width: 600px;
-border: 1px;
-list-style: none;
-border-bottom: 1px solid #6C63FF
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  width: 600px;
+  border: 1px;
+  list-style: none;
+  border-bottom: 1px solid #6C63FF
 
 }
 
 .list li input[type="checkbox"]{
+ 
   display: inline-block;
   width: 26px;
   height: 26px;
@@ -167,8 +161,9 @@ border-bottom: 1px solid #6C63FF
 }
 
 .list li .textWrapper{
+
   display: flex;
-    align-items: center;
+  align-items: center;
   width: 100%;
   font-size: 18px;
   line-height: 20px;
@@ -179,6 +174,7 @@ border-bottom: 1px solid #6C63FF
 }
 
 .list li .deleteButton{
+
   display: inline-block;
   position: relative;
   background-size:cover;
@@ -187,12 +183,12 @@ border-bottom: 1px solid #6C63FF
   width: 18px;
   height: 18px;
   padding: 0px 8px 0px 8px;
+
 }
 
 
 .newNote{
  
-  /* width: 520px; */
   display: flex;
   justify-content: center;
   font-family: Kanit;
@@ -200,9 +196,11 @@ border-bottom: 1px solid #6C63FF
   line-height: 24px;
   padding: 10px 20px 10px 20px;
   margin-top: 10px;
+
 }
 
 .modalContainer{
+
   width: 500px;
   height: 289px;
   border: 1px solid white;
@@ -251,21 +249,24 @@ border-bottom: 1px solid #6C63FF
   
 }
 
-  .newNoteBtns{
-    margin-top: 120px;
-    margin-left: 10px;
-    margin-right: 10px;
-    display: flex; 
-    justify-content: space-between;
+.newNoteBtns{
+
+  margin-top: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex; 
+  justify-content: space-between;
     
   }
 
 
-  .addButtonWrapper{
-    margin: auto;
-    display: flex;
-    justify-content:flex-end;
-  }
+.addButtonWrapper{
+
+  margin: auto;
+  display: flex;
+  justify-content:flex-end;
+
+}
 
 
 .addButton{
@@ -275,13 +276,7 @@ border-bottom: 1px solid #6C63FF
   background-size:cover;
   width: 50px;
   height: 50px;
-
-top: 700px;
-
-gap: 0px;
-opacity: 0px;
-
-  /* left: 100%; */
+  top: 700px;
   background-color: Transparent;
   }
   
