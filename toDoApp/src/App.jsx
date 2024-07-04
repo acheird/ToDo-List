@@ -22,8 +22,6 @@ export function App() {
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
-  // const [backgroundColor, setBackgroundColor] = useState("#252525");
-
   useEffect(() => {
     fetch("http://localhost:8000/todos")
       .then((response) => response.json())
@@ -180,6 +178,7 @@ export function App() {
       <div className="body">
         <div className="list">
           {todos.length ? (
+            //create a list of todos
             <ul>
               {todos.map((todo) => (
                 <li
@@ -214,8 +213,10 @@ export function App() {
               ))}
             </ul>
           ) : (
+            // if todo list is empty, then show an alternative image instead
             <div>
               <img className="emptyListImage" src={detective} />
+              <div className="emptyListText">Empty...</div>
             </div>
           )}
         </div>

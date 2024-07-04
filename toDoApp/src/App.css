@@ -130,11 +130,23 @@
   display: flex; 
 
 }
+
+.emptyListText{
+  width: 60px;
+  height: 174px;
+  left: 149px;
+  gap: 0px;
+  opacity: 0px;
+  margin: 30px auto;  
+  display: flex; 
+
+}
   
 .list{
 
 width: 100%;
 margin-top: 15px;
+cursor: pointer;
 }
 
 .listElement{
@@ -151,7 +163,8 @@ margin-top: 15px;
   width: 600px;
   border: 1px;
   list-style: none;
-  border-bottom: 1px solid #6C63FF
+  border-bottom: 1px solid #6C63FF;
+  
 
 }
 
@@ -168,6 +181,7 @@ margin-top: 15px;
   border-radius: 2px;
   color: #6C63FF; 
   outline: 1px solid #6C63FF;
+  cursor: pointer;
 
 }
 
@@ -296,4 +310,6 @@ margin-top: 15px;
   top: 700px;
   background-color: Transparent;
   }
+
+
   
