@@ -22,6 +22,8 @@ export function App() {
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
+  // const [backgroundColor, setBackgroundColor] = useState("#252525");
+
   useEffect(() => {
     fetch("http://localhost:8000/todos")
       .then((response) => response.json())
@@ -88,8 +90,10 @@ export function App() {
 
       if (response.ok) {
         const newTodo = await response.json();
-        todos[todoIndex] = newTodo;
-        setTodos(todos);
+        // todos[todoIndex] = newTodo;
+        const newTodos = [...todos];
+        newTodos[todoIndex] = newTodo;
+        new setTodos(newTodos);
       } else {
         console.error("Error updating todo:", response.statusText);
       }
@@ -178,7 +182,12 @@ export function App() {
           {todos.length ? (
             <ul>
               {todos.map((todo) => (
-                <li key={todo.id}>
+                <li
+                  key={todo.id}
+                  style={{
+                    textDecoration: todo.completed ? "line-through" : "none",
+                  }}
+                >
                   <div className="listElement">
                     <div>
                       <input

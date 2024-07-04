@@ -1,48 +1,23 @@
 {
   "todos": [
     {
-      "id": "16",
-      "text": "jnjkkll",
-      "completed": true
-    },
-    {
-      "id": "17",
-      "text": "lkadmld",
-      "completed": false
-    },
-    {
-      "id": "18",
-      "text": "ngfnvd f ",
-      "completed": false
-    },
-    {
-      "id": "19",
-      "text": "f dms fm",
-      "completed": false
-    },
-    {
-      "id": "20",
-      "text": "",
-      "completed": false
-    },
-    {
-      "id": "21",
-      "text": "cxb",
-      "completed": false
-    },
-    {
-      "id": "22",
-      "text": "dfddcdvdcc",
-      "completed": false
-    },
-    {
-      "id": "23",
-      "text": "dcdc",
-      "completed": false
-    },
-    {
       "id": "24",
       "text": "c ",
+      "completed": false
+    },
+    {
+      "id": "25",
+      "text": "ccxc",
+      "completed": false
+    },
+    {
+      "id": "26",
+      "text": "cxcx",
+      "completed": false
+    },
+    {
+      "id": "27",
+      "text": "xcx",
       "completed": false
     }
   ]

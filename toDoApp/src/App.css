@@ -288,7 +288,7 @@ margin-top: 15px;
 
 .addButton{
 
-  position:fixed;
+  position:absolute;
   background-image: url('./images/add.png');
   background-size:cover;
   width: 50px;
