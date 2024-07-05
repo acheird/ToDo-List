@@ -1,0 +1,35 @@
+.listElement{
+
+    width: 35px;
+  
+  }
+
+.textWrapper{
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 0px 0px 8px 8px;
+  
+  }
+
+li input[type="checkbox"]:checked{
+  
+    accent-color: #6C63FF;
+  
+}
+
+.deleteButton{
+
+    display: inline-block;
+    position: relative;
+    background-size:cover;
+    background-color: transparent;
+    background-image: url('./images/delete1.svg');
+    width: 18px;
+    height: 18px;
+    padding: 0px 8px 0px 8px;
+  
+  }

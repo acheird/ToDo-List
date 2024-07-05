@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import search from "./images/search.png";
 import detective from "./images/detective.png";
-import ListItem from "./components/ListItem";
+import List from "./components/List";
 
 import {
   addTodo,
@@ -180,17 +180,11 @@ export function App() {
       <div className="body">
         <div className="list">
           {todos.length ? (
-            //create a list of todos
-            <ul>
-              {todos.map((todo) => (
-                <ListItem
-                  key={todo.id}
-                  todo={todo}
-                  handleUpdateProgress={handleUpdateProgress}
-                  handleDelete={handleDelete}
-                />
-              ))}
-            </ul>
+            <List
+              todos={todos}
+              handleUpdateProgress={handleUpdateProgress}
+              handleDelete={handleDelete}
+            />
           ) : (
             // if todo list is empty, then show an alternative image instead
             <div>
