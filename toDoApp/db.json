@@ -3,12 +3,12 @@
     {
       "id": "24",
       "text": "c ",
-      "completed": false
+      "completed": true
     },
     {
       "id": "25",
       "text": "ccxc",
-      "completed": false
+      "completed": true
     },
     {
       "id": "26",
@@ -33,6 +33,26 @@
     {
       "id": "30",
       "text": "",
+      "completed": false
+    },
+    {
+      "id": "31",
+      "text": "xcx",
+      "completed": false
+    },
+    {
+      "id": "32",
+      "text": "xcxghj",
+      "completed": false
+    },
+    {
+      "id": "33",
+      "text": "new task",
+      "completed": false
+    },
+    {
+      "id": "34",
+      "text": "xcxghjvcvx",
       "completed": false
     }
   ]

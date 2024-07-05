@@ -17,13 +17,11 @@
    
 }
 
-  .head h1{
-
+.head h1 {
   font-size: 26px;
   font-weight: 500;
-  line-height: 38.87px;
+  line-height: 1.5;
   text-align: left;
-
 }
   
 .header{
@@ -124,10 +122,9 @@
   width: 221px;
   height: 174px;
   left: 149px;
-  gap: 0px;
-  opacity: 0px;
   margin: 30px auto;  
   display: flex; 
+  
 
 }
 
@@ -135,8 +132,6 @@
   width: 60px;
   height: 174px;
   left: 149px;
-  gap: 0px;
-  opacity: 0px;
   margin: 30px auto;  
   display: flex; 
 

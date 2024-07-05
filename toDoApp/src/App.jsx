@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import search from "./images/search.png";
 import detective from "./images/detective.png";
+import ListItem from "./components/ListItem";
+
 import {
   addTodo,
   updateProgress,
@@ -181,35 +183,12 @@ export function App() {
             //create a list of todos
             <ul>
               {todos.map((todo) => (
-                <li
+                <ListItem
                   key={todo.id}
-                  style={{
-                    textDecoration: todo.completed ? "line-through" : "none",
-                  }}
-                >
-                  <div className="listElement">
-                    <div>
-                      <input
-                        type="checkbox"
-                        value={todo.completed}
-                        defaultChecked={todo.completed ? true : false}
-                        onClick={() =>
-                          handleUpdateProgress(todo.id, "completed")
-                        }
-                      ></input>
-                    </div>
-                  </div>
-                  <div className="textWrapper">
-                    {" " + todo.text}
-                    {" #" + todo.id}
-                  </div>
-                  <div>
-                    <button
-                      className="deleteButton"
-                      onClick={() => handleDelete(todo.id)}
-                    ></button>
-                  </div>
-                </li>
+                  todo={todo}
+                  handleUpdateProgress={handleUpdateProgress}
+                  handleDelete={handleDelete}
+                />
               ))}
             </ul>
           ) : (
