@@ -1,9 +1,9 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
-import search from "./images/search.png";
 import List from "./components/List";
 import AddModal from "./components/AddModal";
+import Form from "./components/Form";
 
 import {
   addTodo,
@@ -159,34 +159,12 @@ export function App() {
     // <div className={mode}>
     <>
       <div className="mainContainer">
-        <div className="head">
-          <h1>TODO LIST</h1>
-          <div className="header">
-            <div className="form-Wrapper">
-              <form onSubmit={handleSearch}>
-                <input
-                  className="search"
-                  placeholder="Search note..."
-                  type="text"
-                  value={value}
-                  onChange={(event) => setValue(event.target.value)}
-                />
-              </form>
-              <button className="search-button" onClick={handleSearch}>
-                <img src={search} />
-              </button>
-            </div>
-            <div className="select-wrapper">
-              <select className="select" onChange={handleFiltered}>
-                <option value="all">ALL</option>
-                <option value="completed">COMPLETED</option>
-                <option value="incompleted">INCOMPLETED</option>
-              </select>
-              <button className="toggle"></button>
-              {/* <button className="toggle" onClick={changeColor}></button> */}
-            </div>
-          </div>
-        </div>
+        <Form
+          value={value}
+          setValue={setValue}
+          handleSearch={handleSearch}
+          handleFiltered={handleFiltered}
+        />
         <div className="body">
           <List
             todos={todos}
