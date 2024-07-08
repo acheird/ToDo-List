@@ -1,37 +1,23 @@
-import "./list.css";
+import ToDoList from "./ToDoList";
+import detective from "../images/detective.png";
 
-/* eslint-disable react/prop-types */
 const List = ({ todos, handleUpdateProgress, handleDelete }) => {
   return (
-    <ul>
-      {todos.map((todo) => (
-        <li
-          key={todo.id}
-          style={{ textDecoration: todo.completed ? "line-through" : "none" }}
-        >
-          <div className="listElement">
-            <div>
-              <input
-                type="checkbox"
-                value={todo.completed}
-                defaultChecked={todo.completed}
-                onClick={() => handleUpdateProgress(todo.id, "completed")}
-              />
-            </div>
-          </div>
-          <div className="textWrapper">
-            {" " + todo.text}
-            {" #" + todo.id}
-          </div>
-          <div>
-            <button
-              className="deleteButton"
-              onClick={() => handleDelete(todo.id)}
-            ></button>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <div className="list">
+      {todos.length ? (
+        <ToDoList
+          todos={todos}
+          handleUpdateProgress={handleUpdateProgress}
+          handleDelete={handleDelete}
+        />
+      ) : (
+        // if todo list is empty, then show an alternative image instead
+        <div>
+          <img className="emptyListImage" src={detective} />
+          <div className="emptyListText">Empty...</div>
+        </div>
+      )}
+    </div>
   );
 };
 

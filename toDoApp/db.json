@@ -1,48 +1,58 @@
 {
   "todos": [
     {
-      "id": "26",
-      "text": "cxcx",
+      "id": "2",
+      "text": "Check if there is text in the field before apply a new todo",
       "completed": false
     },
     {
-      "id": "27",
-      "text": "xcx",
+      "id": "3",
+      "text": "Close modal when apply a new todo",
+      "completed": true
+    },
+    {
+      "id": "4",
+      "text": "lala",
       "completed": false
     },
     {
-      "id": "28",
-      "text": "dd",
+      "id": "5",
+      "text": "dfdfD",
       "completed": false
     },
     {
-      "id": "29",
-      "text": "",
+      "id": "6",
+      "text": "jdncjsd",
       "completed": false
     },
     {
-      "id": "30",
-      "text": "",
+      "id": "7",
+      "text": "sdsd",
       "completed": false
     },
     {
-      "id": "31",
-      "text": "xcx",
+      "id": "8",
+      "text": "sdsds",
       "completed": false
     },
     {
-      "id": "32",
-      "text": "xcxghj",
+      "id": "9",
+      "text": "dsd",
       "completed": false
     },
     {
-      "id": "33",
-      "text": "new task",
+      "id": "10",
+      "text": "nana",
       "completed": false
     },
     {
-      "id": "34",
-      "text": "xcxghjvcvx",
+      "id": "11",
+      "text": "lala",
+      "completed": false
+    },
+    {
+      "id": "12",
+      "text": "fafa",
       "completed": false
     }
   ]

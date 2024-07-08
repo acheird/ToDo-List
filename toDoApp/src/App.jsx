@@ -2,8 +2,8 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import search from "./images/search.png";
-import detective from "./images/detective.png";
 import List from "./components/List";
+import AddModal from "./components/AddModal";
 
 import {
   addTodo,
@@ -148,103 +148,64 @@ export function App() {
     }
   }
 
+  // const [mode, setMode] = useState("");
+
+  // const changeColor = () => {
+  //   // Toggle between colors
+  //   setMode(mode === "root-dark" ? "root-light" : "root-dark");
+  // };
+
   return (
+    // <div className={mode}>
     <>
-      <div className="head">
-        <h1>TODO LIST</h1>
-        <div className="header">
-          <div className="form-Wrapper">
-            <form onSubmit={handleSearch}>
-              <input
-                className="search"
-                placeholder="Search note..."
-                type="text"
-                value={value}
-                onChange={(event) => setValue(event.target.value)}
-              />
-            </form>
-            <button className="search-button" onClick={handleSearch}>
-              <img src={search} />
-            </button>
-          </div>
-          <div className="select-wrapper">
-            <select className="select" onChange={handleFiltered}>
-              <option value="all">ALL</option>
-              <option value="completed">COMPLETED</option>
-              <option value="incompleted">INCOMPLETED</option>
-            </select>
-            <button className="toggle"></button>
-          </div>
-        </div>
-      </div>
-      <div className="body">
-        <div className="list">
-          {todos.length ? (
-            <List
-              todos={todos}
-              handleUpdateProgress={handleUpdateProgress}
-              handleDelete={handleDelete}
-            />
-          ) : (
-            // if todo list is empty, then show an alternative image instead
-            <div>
-              <img className="emptyListImage" src={detective} />
-              <div className="emptyListText">Empty...</div>
+      <div className="mainContainer">
+        <div className="head">
+          <h1>TODO LIST</h1>
+          <div className="header">
+            <div className="form-Wrapper">
+              <form onSubmit={handleSearch}>
+                <input
+                  className="search"
+                  placeholder="Search note..."
+                  type="text"
+                  value={value}
+                  onChange={(event) => setValue(event.target.value)}
+                />
+              </form>
+              <button className="search-button" onClick={handleSearch}>
+                <img src={search} />
+              </button>
             </div>
-          )}
-        </div>
-      </div>
-      <div className="addButtonWrapper">
-        <button className="addButton" onClick={openModal}></button>
-      </div>
-
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="ExampleModal"
-        style={{
-          content: {
-            top: "30%",
-            left: "50%",
-            right: "auto",
-            bottom: "auto",
-            marginRight: "-50%",
-            transform: "translate(-50%, -50%)",
-            border: "1px solid white",
-            padding: "0px",
-            "border-radius": "30px",
-          },
-        }}
-      >
-        <div className="modalContainer">
-          <div className="newNote">NEW NOTE</div>
-          <div className="modalForm">
-            <form onSubmit={handleAddTodo}>
-              <input
-                className="addNote"
-                placeholder="Input you note..."
-                id="name"
-                type="text"
-                value={value}
-                onChange={(event) => setValue(event.target.value)}
-              />
-              <div className="newNoteBtns">
-                <button className="cancelButton" onClick={closeModal}>
-                  CANCEL
-                </button>
-
-                <button
-                  className="submitButton"
-                  type="submit"
-                  // disabled={value ? false : true}
-                >
-                  APPLY
-                </button>
-              </div>
-            </form>
+            <div className="select-wrapper">
+              <select className="select" onChange={handleFiltered}>
+                <option value="all">ALL</option>
+                <option value="completed">COMPLETED</option>
+                <option value="incompleted">INCOMPLETED</option>
+              </select>
+              <button className="toggle"></button>
+              {/* <button className="toggle" onClick={changeColor}></button> */}
+            </div>
           </div>
         </div>
-      </Modal>
+        <div className="body">
+          <List
+            todos={todos}
+            handleUpdateProgress={handleUpdateProgress}
+            handleDelete={handleDelete}
+          />
+        </div>
+        <div className="addButtonWrapper">
+          <button className="addButton" onClick={openModal}></button>
+        </div>
+
+        <AddModal
+          isOpen={modalIsOpen}
+          closeModal={closeModal}
+          value={value}
+          setValue={setValue}
+          handleAddTodo={handleAddTodo}
+        />
+      </div>
     </>
   );
 }
