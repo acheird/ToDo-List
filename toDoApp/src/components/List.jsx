@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import ToDoList from "./ToDoList";
 import detective from "../images/detective.png";
 

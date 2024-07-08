@@ -3,7 +3,7 @@
     {
       "id": "2",
       "text": "Check if there is text in the field before apply a new todo",
-      "completed": false
+      "completed": true
     },
     {
       "id": "3",
@@ -13,7 +13,7 @@
     {
       "id": "4",
       "text": "lala",
-      "completed": false
+      "completed": true
     },
     {
       "id": "5",
@@ -43,21 +43,6 @@
     {
       "id": "10",
       "text": "nana",
-      "completed": false
-    },
-    {
-      "id": "11",
-      "text": "lala",
-      "completed": false
-    },
-    {
-      "id": "12",
-      "text": "fafa",
-      "completed": false
-    },
-    {
-      "id": "13",
-      "text": "dbjs",
       "completed": false
     }
   ]

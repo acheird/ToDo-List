@@ -1,4 +1,5 @@
-import "./App.css";
+import "./App_dark.css";
+// import "./App_light.css";
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import List from "./components/List";
@@ -148,22 +149,22 @@ export function App() {
     }
   }
 
-  // const [mode, setMode] = useState("");
+  const [mode, setMode] = useState("");
 
-  // const changeColor = () => {
-  //   // Toggle between colors
-  //   setMode(mode === "root-dark" ? "root-light" : "root-dark");
-  // };
+  const changeColor = () => {
+    //Toggle between colors
+    setMode(mode === "root-dark" ? "root-light" : "root-dark");
+  };
 
   return (
-    // <div className={mode}>
-    <>
+    <div className={mode}>
       <div className="mainContainer">
         <Form
           value={value}
           setValue={setValue}
           handleSearch={handleSearch}
           handleFiltered={handleFiltered}
+          changeColor={changeColor}
         />
         <div className="body">
           <List
@@ -182,9 +183,10 @@ export function App() {
           value={value}
           setValue={setValue}
           handleAddTodo={handleAddTodo}
+          mode={mode}
         />
       </div>
-    </>
+    </div>
   );
 }
 

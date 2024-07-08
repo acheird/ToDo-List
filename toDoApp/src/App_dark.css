@@ -45,6 +45,14 @@
   line-height: 1.5;
   text-align: left;
 }
+
+.root-light .head h1 {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  color: black;
+}
   
 .header{
   
@@ -74,9 +82,23 @@
   width: 100%;
 }
 
+.root-light .form-Wrapper form{
+  width: 100%;
+  background-color: white;
+}
+
+
 .form-Wrapper form input:focus{
   background-color: black;
 }
+
+.root-light .form-Wrapper form input:focus{
+  background-color: white;
+}
+
+
+
+
   
 .search{
 
@@ -86,6 +108,18 @@
   border: 1px solid #F7F7F7;
   border-radius: 5px;
   width: 100%; 
+
+}
+
+.root-light .search{
+
+  box-sizing: border-box;
+  padding: 8px 16px;  
+  height: 38px;
+  border: 1px solid #6C63FF;
+  border-radius: 5px;
+  width: 100%; 
+  background-color: white;
 
 }
 
@@ -156,8 +190,19 @@
   left: 149px;
   margin: 30px auto;  
   display: flex; 
-
+  color: white;
 }
+
+.root-light .emptyListText{
+  width: 60px;
+  height: 174px;
+  left: 149px;
+  margin: 30px auto;  
+  display: flex; 
+  color: black;
+}
+
+
   
 .list{
 
@@ -221,6 +266,21 @@ cursor: pointer;
 
 }
 
+  
+.root-light .list li .textWrapper{
+  
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 0px 0px 8px 8px;
+  color: black;
+
+
+}
+
+
 .list li .deleteButton{
 
   display: inline-block;
@@ -247,12 +307,37 @@ cursor: pointer;
 
 }
 
+.newNote_light{
+ 
+  display: flex;
+  justify-content: center;
+  font-family: Kanit;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 10px 20px 10px 20px;
+  margin-top: 10px;
+  color: black;
+}
+
+
 .modalContainer{
 
   width: 500px;
   height: 289px;
-  border: 1px solid white;
+  border: 1px solid #252525;
   background:#252525;
+  border-radius: 16px;
+  
+}
+
+.modalContainer_light{
+
+  width: 500px;
+  height: 289px;
+  border: 1px solid purple;
+  background:white;
+  padding: 10px 20px 10px 20px;
+  border-radius: 16px;
   
 }
   
@@ -274,12 +359,38 @@ cursor: pointer;
   border: 1px solid #F7F7F7
 }
 
+.addNote_light{
+  width: 420px;
+  height: 30px;
+  left: 480px; 
+  padding: 10px 16px 8px 16px;
+  margin-top: 10px;
+  opacity: 0px;
+  border: 1px solid #6C63FF;
+  background-color: white;
+}
+
+
+
 .cancelButton{
   width: 110px;
   height: 38px;
   padding: 10px 22px 10px 22px;
   opacity: 0px;
   border: 1px solid #6C63FF
+
+
+}
+
+.cancelButton_light{
+  width: 110px;
+  height: 38px;
+  padding: 10px 22px 10px 22px;
+  opacity: 0px;
+  border: 1px solid #6C63FF;
+  color: #6C63FF;
+  background-color: white;
+
 
 
 }
@@ -296,6 +407,20 @@ cursor: pointer;
   background: #6C63FF;
   
 }
+
+.submitButton_light{
+  width: 97px;
+  height: 38px;
+  top: 351px;
+  left: 823px;
+  padding: 10px 22px 10px 22px;
+  gap: 10px;
+  border-radius: 5px 0px 0px 0px;
+  opacity: 0px;
+  background: #6C63FF;
+  
+}
+
 
 .newNoteBtns{
 

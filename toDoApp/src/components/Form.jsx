@@ -1,6 +1,13 @@
+/* eslint-disable react/prop-types */
 import search from "../images/search.png";
 
-const Form = ({ value, setValue, handleSearch, handleFiltered }) => {
+const Form = ({
+  value,
+  setValue,
+  handleSearch,
+  handleFiltered,
+  changeColor,
+}) => {
   return (
     <div className="head">
       <h1>TODO LIST</h1>
@@ -25,8 +32,8 @@ const Form = ({ value, setValue, handleSearch, handleFiltered }) => {
             <option value="completed">COMPLETED</option>
             <option value="incompleted">INCOMPLETED</option>
           </select>
-          <button className="toggle"></button>
-          {/* <button className="toggle" onClick={changeColor}></button> */}
+          {/* <button className="toggle"></button> */}
+          <button className="toggle" onClick={changeColor}></button>
         </div>
       </div>
     </div>
