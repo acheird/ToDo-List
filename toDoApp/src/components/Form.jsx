@@ -8,6 +8,7 @@ const Form = ({
   handleSearch,
   handleFiltered,
   toggleTheme,
+  selectedImage,
 }) => {
   return (
     <div className="head">
@@ -33,7 +34,13 @@ const Form = ({
             <option value="completed">COMPLETED</option>
             <option value="incompleted">INCOMPLETED</option>
           </select>
-          <button className="toggle" onClick={toggleTheme}></button>
+          <button
+            className="toggle"
+            style={{
+              backgroundImage: "url(" + selectedImage + ")",
+            }}
+            onClick={toggleTheme}
+          ></button>
         </div>
       </div>
     </div>

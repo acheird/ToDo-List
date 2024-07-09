@@ -5,6 +5,8 @@ import Modal from "react-modal";
 import List from "./components/List";
 import AddModal from "./components/AddModal";
 import Form from "./components/Form";
+import light from "./images/light.png";
+import dark from "./images/dark.png";
 
 import {
   addTodo,
@@ -26,6 +28,8 @@ export function App() {
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
+
+  const [selectedImage, setSelectedImage] = useState(light);
 
   useEffect(() => {
     fetch("http://localhost:8000/todos")
@@ -167,6 +171,8 @@ export function App() {
   const toggleTheme = () => {
     //Toggle between colors
     setIsDarkTheme((prevTheme) => !prevTheme);
+    setSelectedImage(selectedImage === light ? dark : light);
+    console.log(selectedImage);
   };
 
   return (
@@ -178,6 +184,7 @@ export function App() {
           handleSearch={handleSearch}
           handleFiltered={handleFiltered}
           toggleTheme={toggleTheme}
+          selectedImage={selectedImage}
         />
         <div className="body">
           <List
