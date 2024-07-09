@@ -39,6 +39,11 @@
       "id": "10",
       "text": "Fix search button light mode",
       "completed": true
+    },
+    {
+      "id": "4",
+      "text": "Case sensitive search",
+      "completed": false
     }
   ]
 }
