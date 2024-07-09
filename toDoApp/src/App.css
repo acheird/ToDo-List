@@ -90,7 +90,7 @@ body.light-theme{
 
 
 .form-Wrapper form input:focus{
-  background-color: black;
+  background-color: var(--bg-color);
 }
   
 .search{
@@ -253,6 +253,7 @@ cursor: pointer;
   line-height: 24px;
   padding: 10px 20px 10px 20px;
   margin-top: 10px;
+  color: var(--text-color);
 
 }
 
