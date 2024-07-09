@@ -72,27 +72,6 @@ body.light-theme{
 
 @media (max-width: 600px) {
 
-    .header{
-      flex-direction: column;
-      align-items:center;
-      gap: 10px;
-      height: auto;
-    }
- 
-    .select-wrapper, .form-Wrapper, .toggle{
-      width: 90%;
-    }
-
-    .search, .select{
-      width: 90%;
-      margin: 0;
-    }
-
-    .toggle{
-      width: 5%;
-      margin: 10px;
-    }
-
  
     .addButton {
       position: absolute;
