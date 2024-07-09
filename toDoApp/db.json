@@ -8,71 +8,61 @@
     {
       "id": "3",
       "text": "Close modal when apply a new todo",
-      "completed": true
+      "completed": false
     },
     {
       "id": "4",
-      "text": "lala",
+      "text": "Fix search icon in light mode",
       "completed": false
     },
     {
       "id": "5",
-      "text": "dfdfD",
+      "text": "Change Icon on toggle",
       "completed": false
     },
     {
       "id": "6",
-      "text": "jdncjsd",
+      "text": "Break App.css",
       "completed": false
     },
     {
       "id": "7",
-      "text": "sdsd",
+      "text": "Make app responsive",
       "completed": false
     },
     {
       "id": "8",
-      "text": "sdsds",
+      "text": "nanan",
       "completed": false
     },
     {
       "id": "9",
-      "text": "dsd",
+      "text": "jajajaja",
       "completed": false
     },
     {
       "id": "10",
-      "text": "nana",
+      "text": "sds",
       "completed": false
     },
     {
       "id": "11",
-      "text": "dfdcd",
+      "text": "sdsd",
       "completed": false
     },
     {
       "id": "12",
-      "text": "dfd",
+      "text": "cxxcx",
       "completed": false
     },
     {
       "id": "13",
-      "text": "dfdf",
+      "text": "dsfs",
       "completed": false
     },
     {
       "id": "14",
-      "text": "dfd",
-      "completed": false
-    },
-    {
-      "id": "15",
-      "text": "nana",
-      "completed": false
-    },
-    {
-      "id": "16",
-      "text": "xcxghjvcvx",
+      "text": "ssd",
       "completed": false
     }
   ]
