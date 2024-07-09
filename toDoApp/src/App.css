@@ -22,8 +22,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0px 0px 0px;
-   
+  padding: 40px 0px 0px 0px; 
 }
 
 .head h1 {
@@ -31,7 +30,7 @@
   font-weight: 500;
   line-height: 1.5;
   text-align: left;
-  color: var(#252525);
+  color: var(--text-color);
 }
 
 .body{
@@ -42,13 +41,12 @@
 
 body{
   background-color: var(--bg-color);
-  color: var(--text-color);
 
 }
 
 body.light-theme{
   --bg-color: #F7F7F7; ;
-  --text-color: #252525
+  --text-color: #252525;
   --input-bg: #F7F7F7;
   --input-text: #252525;
 }
@@ -58,7 +56,7 @@ body.light-theme{
 
   width: 750px;
   margin:  0px auto auto auto;
-  background-color: inherit;
+  /* background-color: inherit; */
 
   }
   
@@ -105,6 +103,7 @@ body.light-theme{
   width: 100%; 
   background-color: var(--bg-color);
   color: var(--input-text);
+  border-color: var(--border-color);
 
 }
 
@@ -129,7 +128,7 @@ body.light-theme{
   height: 38px;
   border-radius: 5px;
   background: var(--border-color);
-  color: var(--text-color);
+  color: var(--body-color);
   margin-right: 10px;
 
 }
@@ -191,7 +190,8 @@ cursor: pointer;
   border: 1px;
   list-style: none;
   border-bottom: 1px solid var(--border-color);
-  
+  background-color: var(--bg-color);
+  color: var(--input-text);
 
 }
 
