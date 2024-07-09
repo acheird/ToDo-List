@@ -37,8 +37,8 @@
     },
     {
       "id": "10",
-      "text": "lalala",
-      "completed": false
+      "text": "Fix search button light mode",
+      "completed": true
     }
   ]
 }

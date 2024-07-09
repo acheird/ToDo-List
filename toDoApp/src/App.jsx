@@ -7,6 +7,8 @@ import AddModal from "./components/AddModal";
 import Form from "./components/Form";
 import light from "./images/light.png";
 import dark from "./images/dark.png";
+import search from "./images/search.png";
+import search_light from "./images/search_light.png";
 
 import {
   addTodo,
@@ -30,6 +32,7 @@ export function App() {
   const closeModal = () => setModalIsOpen(false);
 
   const [selectedImage, setSelectedImage] = useState(light);
+  const [selectedSearch, setSelectedSearch] = useState(search);
 
   useEffect(() => {
     fetch("http://localhost:8000/todos")
@@ -172,7 +175,8 @@ export function App() {
     //Toggle between colors
     setIsDarkTheme((prevTheme) => !prevTheme);
     setSelectedImage(selectedImage === light ? dark : light);
-    console.log(selectedImage);
+    setSelectedSearch(selectedSearch === search_light ? search : search_light);
+    console.log(selectedSearch);
   };
 
   return (
@@ -185,6 +189,7 @@ export function App() {
           handleFiltered={handleFiltered}
           toggleTheme={toggleTheme}
           selectedImage={selectedImage}
+          selectedSearch={selectedSearch}
         />
         <div className="body">
           <List

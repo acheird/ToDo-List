@@ -4,6 +4,7 @@
   --border-color: #6C63FF;
   --input-bg: #666666;
   --input-text: #F7F7F7;
+  /* --input-image:  url('./images/search.png'); */
 }
 
 #root {
@@ -27,6 +28,7 @@ body.light-theme{
   --text-color: #252525;
   --input-bg: #F7F7F7;
   --input-text: #252525;
+  /* --input-image:  url('./images/search_light.png'); */
 }
 
 

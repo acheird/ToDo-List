@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import search from "../images/search.png";
+
 import "./form.css";
 
 const Form = ({
@@ -9,6 +9,7 @@ const Form = ({
   handleFiltered,
   toggleTheme,
   selectedImage,
+  selectedSearch,
 }) => {
   return (
     <div className="head">
@@ -25,7 +26,7 @@ const Form = ({
             />
           </form>
           <button className="search-button" onClick={handleSearch}>
-            <img src={search} />
+            <img src={selectedSearch} />
           </button>
         </div>
         <div className="select-wrapper">
