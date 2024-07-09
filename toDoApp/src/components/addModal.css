@@ -5,6 +5,7 @@
   border: 1px solid var(--text-color);
   background: var(--bg-color);
   border-radius: 16px;
+  border-color: var(--border-color);
     
 }
 
@@ -12,12 +13,13 @@
  
   display: flex;
   justify-content: center;
-  font-family: Kanit;
+  font-weight: 500;
   font-size: 24px;
   line-height: 24px;
   padding: 10px 20px 10px 20px;
   margin-top: 10px;
   color: var(--text-color);
+  
 
 }
   
@@ -26,6 +28,7 @@
   
   display: flex;
   justify-content: center;
+  
 
 }
   
@@ -36,7 +39,7 @@
   padding: 10px 16px 8px 16px;
   margin-top: 10px;
   opacity: 0px;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--border-color);;
   background-color: var(--bg-color);
   color: var(--input-text);
 
@@ -59,7 +62,7 @@
   opacity: 0px;
   border: 1px solid var(--border-color);
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--border-color);
 
 }
   
@@ -73,7 +76,7 @@
   border-radius: 5px 0px 0px 0px;
   opacity: 0px;
   background: var(--border-color);
-  color: var(--text-color);
+  color: var(--bg-color);
   
 }
   
