@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import search from "../images/search.png";
+import "./form.css";
 
 const Form = ({
   value,

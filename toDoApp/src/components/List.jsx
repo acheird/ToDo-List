@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import ToDoList from "./ToDoList";
 import detective from "../images/detective.png";
+import "./list.css";
 
 const List = ({ todos, handleUpdateProgress, handleDelete }) => {
   return (

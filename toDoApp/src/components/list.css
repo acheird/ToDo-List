@@ -1,0 +1,64 @@
+.list{
+
+  width: 100%;
+  margin-top: 15px;
+  cursor: pointer;
+  
+}
+
+
+
+.list li{
+
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  width: 600px;
+  border: 1px;
+  list-style: none;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--input-text);
+
+}
+  
+.list li:last-child{
+  border-bottom: none;
+}
+
+.list li input[type="checkbox"]{
+  
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  top:120px;
+  border-radius: 2px;
+  color: var(--border-color); 
+  outline: 1px solid var(--border-color);
+  cursor: pointer;
+
+}
+  
+.list li input[type="checkbox"]:checked{
+  
+  accent-color: #6C63FF;
+
+}
+  
+
+.emptyListImage{
+    width: 221px;
+    height: 174px;
+    left: 149px;
+    margin: 30px auto;  
+    display: flex; 
+
+}
+      
+.emptyListText{
+  width: 60px;
+  height: 174px;
+  left: 149px;
+  margin: 30px auto;  
+  display: flex; 
+}

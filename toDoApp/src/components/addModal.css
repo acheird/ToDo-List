@@ -1,0 +1,80 @@
+.modalContainer{
+  
+  width: 500px;
+  height: 289px;
+  border: 1px solid var(--text-color);
+  background: var(--bg-color);
+  border-radius: 16px;
+    
+}
+
+.newNote{
+ 
+  display: flex;
+  justify-content: center;
+  font-family: Kanit;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 10px 20px 10px 20px;
+  margin-top: 10px;
+  color: var(--text-color);
+
+}
+  
+
+.modalForm{
+  
+  display: flex;
+  justify-content: center;
+
+}
+  
+.addNote{
+  width: 420px;
+  height: 30px;
+  left: 480px; 
+  padding: 10px 16px 8px 16px;
+  margin-top: 10px;
+  opacity: 0px;
+  border: 1px solid var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--input-text);
+
+}
+  
+.newNoteBtns{
+
+  margin-top: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex; 
+  justify-content: space-between;
+    
+  }
+
+.cancelButton{
+  width: 110px;
+  height: 38px;
+  padding: 10px 22px 10px 22px;
+  opacity: 0px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+}
+  
+.submitButton{
+  width: 97px;
+  height: 38px;
+  top: 351px;
+  left: 823px;
+  padding: 10px 22px 10px 22px;
+  gap: 10px;
+  border-radius: 5px 0px 0px 0px;
+  opacity: 0px;
+  background: var(--border-color);
+  color: var(--text-color);
+  
+}
+  
+  

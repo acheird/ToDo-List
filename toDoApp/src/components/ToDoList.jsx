@@ -1,4 +1,4 @@
-// import "./list.css";
+import "./toDoList.css";
 
 /* eslint-disable react/prop-types */
 const ToDoList = ({ todos, handleUpdateProgress, handleDelete }) => {

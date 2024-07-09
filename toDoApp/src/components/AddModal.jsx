@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import Modal from "react-modal";
-
+import "./addModal.css";
 const AddModal = ({ isOpen, closeModal, value, setValue, handleAddTodo }) => {
   return (
     <Modal
