@@ -41,25 +41,29 @@ export function App() {
   async function handleAddTodo(event) {
     event.preventDefault();
 
-    const newId =
-      todos.length > 0 ? Math.max(...todos.map((todo) => todo.id)) + 1 : 1;
-    try {
-      const response = await addTodo({
-        id: newId.toString(),
-        text: value,
-        completed: false,
-      });
+    if (value.trim() === "") {
+      alert("Input is empty");
+    } else {
+      const newId =
+        todos.length > 0 ? Math.max(...todos.map((todo) => todo.id)) + 1 : 1;
+      try {
+        const response = await addTodo({
+          id: newId.toString(),
+          text: value,
+          completed: false,
+        });
 
-      if (response.ok) {
-        const newTodo = await response.json();
-        setTodos([...todos, newTodo]);
-        setValue(""); // Clear the input value
-        setModalIsOpen(false);
-      } else {
-        console.error("Error adding todo:", response.statusText);
+        if (response.ok) {
+          const newTodo = await response.json();
+          setTodos([...todos, newTodo]);
+          setValue(""); // Clear the input value
+          setModalIsOpen(false);
+        } else {
+          console.error("Error adding todo:", response.statusText);
+        }
+      } catch (error) {
+        console.error("An error occurred:", error);
       }
-    } catch (error) {
-      console.error("An error occurred:", error);
     }
   }
 
