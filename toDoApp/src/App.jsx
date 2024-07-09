@@ -20,6 +20,8 @@ export function App() {
   const [todos, setTodos] = useState([]);
   let [value, setValue] = useState("");
 
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => setModalIsOpen(true);
@@ -30,6 +32,10 @@ export function App() {
       .then((response) => response.json())
       .then((data) => setTodos(data));
   }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("light-theme", !isDarkTheme);
+  }, [isDarkTheme]);
 
   // Add a new task to the todo list
   async function handleAddTodo(event) {
@@ -149,26 +155,24 @@ export function App() {
     }
   }
 
-  const [mode, setMode] = useState("");
-
   // const [backgroundImage, setBackgroundImage] = useState(
   //   'url("./assets/container.jpg")'
   // );
 
-  const changeColor = () => {
+  const toggleTheme = () => {
     //Toggle between colors
-    setMode(mode === "root-dark" ? "root-light" : "root-dark");
+    setIsDarkTheme((prevTheme) => !prevTheme);
   };
 
   return (
-    <div className={mode}>
+    <div className={isDarkTheme ? "dark-theme" : "light-theme"}>
       <div className="mainContainer">
         <Form
           value={value}
           setValue={setValue}
           handleSearch={handleSearch}
           handleFiltered={handleFiltered}
-          changeColor={changeColor}
+          toggleTheme={toggleTheme}
         />
         <div className="body">
           <List

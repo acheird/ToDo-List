@@ -34,6 +34,25 @@
   color: var(#252525);
 }
 
+.body{
+  
+  display: flex;
+ 
+}
+
+body{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+}
+
+body.light-theme{
+  --bg-color: #F7F7F7; ;
+  --text-color: #252525
+  --input-bg: #F7F7F7;
+  --input-text: #252525;
+}
+
 
 .mainContainer {
 
@@ -132,12 +151,6 @@
 
 }
 
-
-.body{
-  
-  display: flex;
- 
-}
 
 .emptyListImage{
   width: 221px;

@@ -6,7 +6,7 @@ const Form = ({
   setValue,
   handleSearch,
   handleFiltered,
-  changeColor,
+  toggleTheme,
 }) => {
   return (
     <div className="head">
@@ -32,7 +32,7 @@ const Form = ({
             <option value="completed">COMPLETED</option>
             <option value="incompleted">INCOMPLETED</option>
           </select>
-          <button className="toggle" onClick={changeColor}></button>
+          <button className="toggle" onClick={toggleTheme}></button>
         </div>
       </div>
     </div>

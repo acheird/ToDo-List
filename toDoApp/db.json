@@ -3,12 +3,12 @@
     {
       "id": "2",
       "text": "Check if there is text in the field before apply a new todo",
-      "completed": false
+      "completed": true
     },
     {
       "id": "3",
       "text": "Close modal when apply a new todo",
-      "completed": false
+      "completed": true
     },
     {
       "id": "4",
@@ -63,6 +63,16 @@
     {
       "id": "14",
       "text": "dfd",
+      "completed": false
+    },
+    {
+      "id": "15",
+      "text": "nana",
+      "completed": false
+    },
+    {
+      "id": "16",
+      "text": "xcxghjvcvx",
       "completed": false
     }
   ]
