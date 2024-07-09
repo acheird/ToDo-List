@@ -1,4 +1,4 @@
-import "./App_dark.css";
+import "./App.css";
 // import "./App_light.css";
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
@@ -151,6 +151,10 @@ export function App() {
 
   const [mode, setMode] = useState("");
 
+  // const [backgroundImage, setBackgroundImage] = useState(
+  //   'url("./assets/container.jpg")'
+  // );
+
   const changeColor = () => {
     //Toggle between colors
     setMode(mode === "root-dark" ? "root-light" : "root-dark");
@@ -183,7 +187,6 @@ export function App() {
           value={value}
           setValue={setValue}
           handleAddTodo={handleAddTodo}
-          mode={mode}
         />
       </div>
     </div>

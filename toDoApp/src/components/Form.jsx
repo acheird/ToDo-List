@@ -32,7 +32,6 @@ const Form = ({
             <option value="completed">COMPLETED</option>
             <option value="incompleted">INCOMPLETED</option>
           </select>
-          {/* <button className="toggle"></button> */}
           <button className="toggle" onClick={changeColor}></button>
         </div>
       </div>

@@ -1,14 +1,7 @@
 /* eslint-disable react/prop-types */
 import Modal from "react-modal";
 
-const AddModal = ({
-  isOpen,
-  closeModal,
-  value,
-  setValue,
-  handleAddTodo,
-  mode,
-}) => {
+const AddModal = ({ isOpen, closeModal, value, setValue, handleAddTodo }) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -29,65 +22,34 @@ const AddModal = ({
         },
       }}
     >
-      {mode !== "root-light" ? (
-        <div className="modalContainer">
-          <div className="newNote">NEW NOTE</div>
-          <div className="modalForm">
-            <form onSubmit={handleAddTodo}>
-              <input
-                className="addNote"
-                placeholder="Input you note..."
-                id="name"
-                type="text"
-                value={value}
-                onChange={(event) => setValue(event.target.value)}
-              />
-              <div className="newNoteBtns">
-                <button className="cancelButton" onClick={closeModal}>
-                  CANCEL
-                </button>
+      <div className="modalContainer">
+        <div className="newNote">NEW NOTE</div>
+        <div className="modalForm">
+          <form onSubmit={handleAddTodo}>
+            <input
+              className="addNote"
+              placeholder="Input you note..."
+              id="name"
+              type="text"
+              value={value}
+              onChange={(event) => setValue(event.target.value)}
+            />
+            <div className="newNoteBtns">
+              <button className="cancelButton" onClick={closeModal}>
+                CANCEL
+              </button>
 
-                <button
-                  className="submitButton"
-                  type="submit"
-                  // disabled={value ? false : true}
-                >
-                  APPLY
-                </button>
-              </div>
-            </form>
-          </div>
+              <button
+                className="submitButton"
+                type="submit"
+                // disabled={value ? false : true}
+              >
+                APPLY
+              </button>
+            </div>
+          </form>
         </div>
-      ) : (
-        <div className="modalContainer_light">
-          <div className="newNote_light">NEW NOTE</div>
-          <div className="modalForm">
-            <form onSubmit={handleAddTodo}>
-              <input
-                className="addNote_light"
-                placeholder="Input you note..."
-                id="name"
-                type="text"
-                value={value}
-                onChange={(event) => setValue(event.target.value)}
-              />
-              <div className="newNoteBtns">
-                <button className="cancelButton_light" onClick={closeModal}>
-                  CANCEL
-                </button>
-
-                <button
-                  className="submitButton_light"
-                  type="submit"
-                  // disabled={value ? false : true}
-                >
-                  APPLY
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+      </div>
     </Modal>
   );
 };
