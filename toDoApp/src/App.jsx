@@ -54,6 +54,7 @@ export function App() {
         const newTodo = await response.json();
         setTodos([...todos, newTodo]);
         setValue(""); // Clear the input value
+        setModalIsOpen(false);
       } else {
         console.error("Error adding todo:", response.statusText);
       }
