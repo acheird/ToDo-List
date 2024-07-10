@@ -1,5 +1,4 @@
 import "./App.css";
-// import "./App_light.css";
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import List from "./components/List";
@@ -34,12 +33,14 @@ export function App() {
   const [selectedImage, setSelectedImage] = useState(light);
   const [selectedSearch, setSelectedSearch] = useState(search);
 
+  // Fetching data from the server
   useEffect(() => {
     fetch("http://localhost:8000/todos")
       .then((response) => response.json())
       .then((data) => setTodos(data));
   }, []);
 
+  // Switch between themes (dark/light)
   useEffect(() => {
     document.body.classList.toggle("light-theme", !isDarkTheme);
   }, [isDarkTheme]);
@@ -51,9 +52,11 @@ export function App() {
     if (value.trim() === "") {
       alert("Input is empty");
     } else {
+      // Create Id for the new entry based on existing todos
       const newId =
         todos.length > 0 ? Math.max(...todos.map((todo) => todo.id)) + 1 : 1;
       try {
+        // Call AddTodo passing new todo's attributes
         const response = await addTodo({
           id: newId.toString(),
           text: value,
@@ -62,6 +65,7 @@ export function App() {
 
         if (response.ok) {
           const newTodo = await response.json();
+          //Updates Todo List adding the new entry
           setTodos([...todos, newTodo]);
           setValue(""); // Clear the input value
           setModalIsOpen(false);
@@ -83,9 +87,11 @@ export function App() {
 
       if (response.ok) {
         const newTodos = await response.json();
+        // Search in the todo list looking for a given word
         const remainingTodos = newTodos.filter((todo) =>
           todo.text.includes(searchingWord)
         );
+        // Updates Todo List based on search results
         setTodos(remainingTodos);
         setValue("");
       } else {
@@ -98,10 +104,13 @@ export function App() {
 
   // Update todo task progress (Completed/Incompleted)
   async function handleUpdateProgress(todoId, field) {
+    // Looking in todo List for a todo item with the specified todoId
     const todoIndex = todos.findIndex((todo) => todo.id === todoId);
     try {
+      // Updates progress in json server
       const response = await updateProgress(
         {
+          // completed : progress reversal
           [field]: !todos[todoIndex][field],
         },
         todoId
@@ -109,8 +118,8 @@ export function App() {
 
       if (response.ok) {
         const newTodo = await response.json();
-        // todos[todoIndex] = newTodo;
         const newTodos = [...todos];
+        // Updates task's progress
         newTodos[todoIndex] = newTodo;
         new setTodos(newTodos);
       } else {
@@ -124,11 +133,11 @@ export function App() {
   // Delete a task from the todo list
   async function handleDelete(todoId) {
     try {
-      console.log(todoId);
+      // Deletes task with the specified todoId
       const response = await deleteTodo(todoId);
-      console.log(response);
 
       if (response.ok) {
+        // Updates todo List
         const remainingTodos = todos.filter((todo) => todo.id !== todoId);
         setTodos(remainingTodos);
       } else {
@@ -181,7 +190,7 @@ export function App() {
   return (
     <div className={isDarkTheme ? "dark-theme" : "light-theme"}>
       <div className="mainContainer">
-        {/* ToDo search and filtering */}
+        {/* ToDo search and filtering + toggle themes*/}
         <Form
           value={value}
           setValue={setValue}
@@ -202,7 +211,7 @@ export function App() {
         <div className="addButtonWrapper">
           <button className="addButton" onClick={openModal}></button>
         </div>
-        {/* Modal call */}
+        {/* Modal call / Add new Todo*/}
         <AddModal
           isOpen={modalIsOpen}
           closeModal={closeModal}

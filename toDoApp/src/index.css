@@ -5,12 +5,18 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --bg-color: #252525;
+  --text-color: #F7F7F7;
+  --border-color: #6C63FF;
+  --input-bg: #666666;
+  --input-text: #F7F7F7;
 }
 
 a {
@@ -28,6 +34,17 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  height: 100vh;
+}
+/* Light theme settings */
+body.light-theme{
+  --bg-color: #F7F7F7; ;
+  --text-color: #6C63FF;
+  --input-bg: #F7F7F7;
+  --input-text: #252525;
+  --border-color: #6C63FF;
+
 }
 
 h1 {
