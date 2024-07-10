@@ -1,5 +1,5 @@
 /* Main form section */
-.head{
+.header{
   
   margin: auto;
   display: flex; 
@@ -10,17 +10,17 @@
 }
 
 /* Todo App Header */
-.head h1 {
+.header h1 {
   font-size: 26px;
   font-weight: 500;
   line-height: 1.5;
   text-align: left;
-  color: var(--text-color);
+  color: var(--input-text);
 }
 
 
 /* Main form button container */
-.header{
+.formContainer{
 
   display: flex;
   gap: 16px;
@@ -30,24 +30,25 @@
   
 }
 
-.form-Wrapper{
+.search{
   position: relative;
   display: flex;
   flex: 1;
 
 }
 
-.form-Wrapper form{
+.search form{
   width: 100%;
 }
   
   
-.form-Wrapper form input:focus{
+.search form input:focus{
   background-color: var(--bg-color);
+  border-color: var(--text-color);
 }
 
 /* Search input */
-.search{
+.search__input{
 
   box-sizing: border-box;
   padding: 8px 16px;  
@@ -62,7 +63,7 @@
 
 }
   
-.search-button{
+.search__button{
 
   background-color: transparent;
   outline: none;
@@ -74,7 +75,7 @@
 }
   
 
-.select-wrapper{
+.BtsContainer{
 
   display: flex;
   align-items: center;
@@ -113,18 +114,18 @@
 /* Set up for small devices */
   @media (max-width: 600px) {
 
-    .header{
+    .formContainer{
       flex-direction: column;
       align-items:center;
       gap: 10px;
       height: auto;
     }
 
-    .select-wrapper, .form-Wrapper, .toggle{
+    .BtsContainer, .search, .toggle{
       width: 90%;
     }
 
-    .search, .select{
+    .search__input, .select{
       width: 90%;
       margin: 0;
     }

@@ -12,26 +12,26 @@ const Form = ({
 }) => {
   return (
     /* Search and filtering form section */
-    <div className="head">
+    <div className="header">
       {/* Todo App Header  */}
       <h1>TODO LIST</h1>
       {/* Main form button container */}
-      <div className="header">
-        <div className="form-Wrapper">
+      <div className="formContainer">
+        <div className="search">
           <form onSubmit={handleSearch}>
             <input
-              className="search"
+              className="search__input"
               placeholder="Search note..."
               type="text"
               value={value}
               onChange={(event) => setValue(event.target.value)}
             />
           </form>
-          <button className="search-button" onClick={handleSearch}>
+          <button className="search__button" onClick={handleSearch}>
             <img src={selectedSearch} />
           </button>
         </div>
-        <div className="select-wrapper">
+        <div className="BtsContainer">
           <select className="select" onChange={handleFiltered}>
             <option value="all">ALL</option>
             <option value="completed">COMPLETED</option>

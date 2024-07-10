@@ -192,7 +192,7 @@ export function App() {
           selectedSearch={selectedSearch}
         />
         {/* ToDoList section */}
-        <div className="body">
+        <div className="listContainer">
           <List
             todos={todos}
             handleUpdateProgress={handleUpdateProgress}
