@@ -4,32 +4,29 @@
   --border-color: #6C63FF;
   --input-bg: #666666;
   --input-text: #F7F7F7;
-  /* --input-image:  url('./images/search.png'); */
 }
 
 #root {
   
   width: 750px;
-  /* height: 100vh; */
   margin: 0 auto auto auto;
   background-color: var(--bg-color);
   
 }
-
-
 
 body{
   background-color: var(--bg-color);
 
 }
 
+/* Light theme settings */
 body.light-theme{
   --bg-color: #F7F7F7; ;
   --text-color: #6C63FF;
   --input-bg: #F7F7F7;
   --input-text: #252525;
   --border-color: #6C63FF;
-  /* --input-image:  url('./images/search_light.png'); */
+
 }
 
 
@@ -37,7 +34,6 @@ body.light-theme{
 
   width: 750px;
   margin:  0px auto auto auto;
-  /* background-color: inherit; */
 
  }
 
@@ -47,11 +43,6 @@ body.light-theme{
   
 }
 
-/* .listElement{
-
-  width: 35px;
-
-} */
 
 .addButtonWrapper{
 

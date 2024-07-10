@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import "./addModal.css";
 const AddModal = ({ isOpen, closeModal, value, setValue, handleAddTodo }) => {
   return (
+    // Modal call
     <Modal
       isOpen={isOpen}
       onRequestClose={closeModal}
@@ -13,9 +14,7 @@ const AddModal = ({ isOpen, closeModal, value, setValue, handleAddTodo }) => {
           left: "50%",
           right: "auto",
           bottom: "auto",
-          // marginRight: "-50%",
           transform: "translate(-50%, -50%)",
-          // border: "1px solid white",
           padding: "0px",
           "border-radius": "10px",
         },
@@ -38,11 +37,7 @@ const AddModal = ({ isOpen, closeModal, value, setValue, handleAddTodo }) => {
                 CANCEL
               </button>
 
-              <button
-                className="submitButton"
-                type="submit"
-                // disabled={value ? false : true}
-              >
+              <button className="submitButton" type="submit">
                 APPLY
               </button>
             </div>

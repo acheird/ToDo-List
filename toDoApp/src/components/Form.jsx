@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 import "./form.css";
 
 const Form = ({
@@ -12,8 +11,11 @@ const Form = ({
   selectedSearch,
 }) => {
   return (
+    /* Search and filtering form section */
     <div className="head">
+      {/* Todo App Header  */}
       <h1>TODO LIST</h1>
+      {/* Main form button container */}
       <div className="header">
         <div className="form-Wrapper">
           <form onSubmit={handleSearch}>
@@ -35,6 +37,7 @@ const Form = ({
             <option value="completed">COMPLETED</option>
             <option value="incompleted">INCOMPLETED</option>
           </select>
+          {/* Toggle theme button  */}
           <button
             className="toggle"
             style={{

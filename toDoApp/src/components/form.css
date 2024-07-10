@@ -1,3 +1,4 @@
+/* Main form section */
 .head{
   
   margin: auto;
@@ -7,7 +8,8 @@
   align-items: center;
   padding: 40px 0px 0px 0px; 
 }
-  
+
+/* Todo App Header */
 .head h1 {
   font-size: 26px;
   font-weight: 500;
@@ -17,6 +19,7 @@
 }
 
 
+/* Main form button container */
 .header{
 
   display: flex;
@@ -43,7 +46,7 @@
   background-color: var(--bg-color);
 }
 
-
+/* Search input */
 .search{
 
   box-sizing: border-box;
@@ -67,7 +70,6 @@
   margin-top: -2px;
   width: 21px;
   height: 21px;
-  /* background-image: var(--input-image) */
   
 }
   
@@ -78,39 +80,37 @@
   align-items: center;
 
 }
-  
-  
-    
-  
-    
-  .select{
-    
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-    width: 130px;
-    height: 38px;
-    border-radius: 5px;
-    background: var(--border-color);
-    color: var(--body-color);
-    margin-right: 10px;
-  
-  }
 
-  .select option{
-    background-color: white;
-    color: #6C63FF;
-  }
-
-  .toggle{
-
-    width: 38px;
-    height: 38px;
-    /* background-image: url('../images/toogle.png'); */
+/* Filter button  */
+.select{
   
-  }
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  width: 130px;
+  height: 38px;
+  border-radius: 5px;
+  background: var(--border-color);
+  color: var(--body-color);
+  margin-right: 10px;
+
+}
+
+.select option{
+  background-color: white;
+  color: #6C63FF;
+}
 
 
+/* Toggle theme button */
+.toggle{
+
+  width: 38px;
+  height: 38px;
+
+}
+
+/* Set up for small devices */
   @media (max-width: 600px) {
 
     .header{

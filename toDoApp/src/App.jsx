@@ -167,14 +167,13 @@ export function App() {
     }
   }
 
-  // const [backgroundImage, setBackgroundImage] = useState(
-  //   'url("./assets/container.jpg")'
-  // );
-
+  // Toggle Themes
   const toggleTheme = () => {
-    //Toggle between colors
+    //Change theme color
     setIsDarkTheme((prevTheme) => !prevTheme);
+    // Change toggle button's image
     setSelectedImage(selectedImage === light ? dark : light);
+    // Change search button's image
     setSelectedSearch(selectedSearch === search_light ? search : search_light);
     console.log(selectedSearch);
   };
@@ -182,6 +181,7 @@ export function App() {
   return (
     <div className={isDarkTheme ? "dark-theme" : "light-theme"}>
       <div className="mainContainer">
+        {/* ToDo search and filtering */}
         <Form
           value={value}
           setValue={setValue}
@@ -191,6 +191,7 @@ export function App() {
           selectedImage={selectedImage}
           selectedSearch={selectedSearch}
         />
+        {/* ToDoList section */}
         <div className="body">
           <List
             todos={todos}
@@ -201,7 +202,7 @@ export function App() {
         <div className="addButtonWrapper">
           <button className="addButton" onClick={openModal}></button>
         </div>
-
+        {/* Modal call */}
         <AddModal
           isOpen={modalIsOpen}
           closeModal={closeModal}
