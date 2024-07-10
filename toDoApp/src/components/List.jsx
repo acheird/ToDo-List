@@ -17,8 +17,8 @@ const List = ({ todos, handleUpdateProgress, handleDelete }) => {
       ) : (
         // if TodoList is empty, then show an alternative image instead
         <div>
-          <img className="emptyListImage" src={detective} />
-          <div className="emptyListText">Empty...</div>
+          <img className="empty-list-image" src={detective} />
+          <div className="empty-list-text">Empty...</div>
         </div>
       )}
     </div>

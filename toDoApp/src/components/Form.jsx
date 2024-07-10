@@ -16,22 +16,22 @@ const Form = ({
       {/* Todo App Header  */}
       <h1>TODO LIST</h1>
       {/* Main form button container */}
-      <div className="formContainer">
+      <div className="form-container">
         <div className="search">
           <form onSubmit={handleSearch}>
             <input
-              className="search__input"
+              className="search-input"
               placeholder="Search note..."
               type="text"
               value={value}
               onChange={(event) => setValue(event.target.value)}
             />
           </form>
-          <button className="search__button" onClick={handleSearch}>
+          <button className="search-button" onClick={handleSearch}>
             <img src={selectedSearch} />
           </button>
         </div>
-        <div className="BtsContainer">
+        <div className="buttons-container">
           <select className="select" onChange={handleFiltered}>
             <option value="all">ALL</option>
             <option value="completed">COMPLETED</option>

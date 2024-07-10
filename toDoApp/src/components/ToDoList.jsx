@@ -18,13 +18,13 @@ const ToDoList = ({ todos, handleUpdateProgress, handleDelete }) => {
             />
           </div>
 
-          <div className="textWrapper">
+          <div className="text-wrapper">
             {" " + todo.text}
             {" #" + todo.id}
           </div>
           <div>
             <button
-              className="deleteButton"
+              className="delete-button"
               onClick={() => handleDelete(todo.id)}
             ></button>
           </div>

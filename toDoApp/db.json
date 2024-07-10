@@ -28,7 +28,7 @@
     {
       "id": "8",
       "text": "Fix full length light mode",
-      "completed": false
+      "completed": true
     },
     {
       "id": "9",
@@ -41,13 +41,13 @@
       "completed": true
     },
     {
-      "id": "4",
-      "text": "Case sensitive search",
+      "id": "11",
+      "text": "Fix checkBox backgroun color",
       "completed": false
     },
     {
-      "id": "11",
-      "text": "Fix checkBox backgroun color",
+      "id": "12",
+      "text": "lala",
       "completed": false
     }
   ]

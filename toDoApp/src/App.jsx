@@ -189,7 +189,7 @@ export function App() {
 
   return (
     <div className={isDarkTheme ? "dark-theme" : "light-theme"}>
-      <div className="mainContainer">
+      <div className="main-container">
         {/* ToDo search and filtering + toggle themes*/}
         <Form
           value={value}
@@ -201,15 +201,15 @@ export function App() {
           selectedSearch={selectedSearch}
         />
         {/* ToDoList section */}
-        <div className="listContainer">
+        <div className="list-container">
           <List
             todos={todos}
             handleUpdateProgress={handleUpdateProgress}
             handleDelete={handleDelete}
           />
         </div>
-        <div className="addButtonWrapper">
-          <button className="addButton" onClick={openModal}></button>
+        <div className="add-button-wrapper">
+          <button className="add-button" onClick={openModal}></button>
         </div>
         {/* Modal call / Add new Todo*/}
         <AddModal

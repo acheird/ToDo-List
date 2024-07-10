@@ -7,21 +7,21 @@
   
 }
 
-.mainContainer {
+.main-container {
 
   width: 750px;
   margin:  0px auto auto auto;
 
  }
 
-.listContainer{
+.list-container{
 
   display: flex;
   
 }
 
 
-.addButtonWrapper{
+.add-button-wrapper{
 
   margin: auto;
   display: flex;
@@ -30,7 +30,7 @@
 }
 
 
-.addButton{
+.add-button{
 
   position:absolute;
   background-image: url('./images/add.png');
@@ -44,7 +44,7 @@
 @media (max-width: 600px) {
 
  
-    .addButton {
+    .add-button {
       position: absolute;
       width: 60px;
       height: 60px;

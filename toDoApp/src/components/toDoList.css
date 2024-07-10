@@ -1,4 +1,4 @@
-.list li .textWrapper{
+.list li .text-wrapper{
 
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@
 }
 
 
-.list li .deleteButton{
+.list li .delete-button{
 
   display: inline-block;
   position: relative;

@@ -21,23 +21,23 @@ const AddModal = ({ isOpen, closeModal, value, setValue, handleAddTodo }) => {
       }}
     >
       <div className="modal">
-        <div className="modal__header ">NEW NOTE</div>
-        <div className="modal__form">
+        <div className="modal-header ">NEW NOTE</div>
+        <div className="modal-form">
           <form onSubmit={handleAddTodo}>
             <input
-              className="modal__input"
+              className="modal-input"
               placeholder="Input you note..."
               id="name"
               type="text"
               value={value}
               onChange={(event) => setValue(event.target.value)}
             />
-            <div className="modal__buttons">
-              <button className="modal__cancelButton" onClick={closeModal}>
+            <div className="modal-buttons">
+              <button className="modal-cancel-button" onClick={closeModal}>
                 CANCEL
               </button>
 
-              <button className="modal__submitButton" type="submit">
+              <button className="modal-submit-button" type="submit">
                 APPLY
               </button>
             </div>

@@ -20,7 +20,7 @@
 
 
 /* Main form button container */
-.formContainer{
+.form-container{
 
   display: flex;
   gap: 16px;
@@ -48,7 +48,7 @@
 }
 
 /* Search input */
-.search__input{
+.search-input{
 
   box-sizing: border-box;
   padding: 8px 16px;  
@@ -63,7 +63,7 @@
 
 }
   
-.search__button{
+.search-button{
 
   background-color: transparent;
   outline: none;
@@ -75,7 +75,7 @@
 }
   
 
-.BtsContainer{
+.buttons-container{
 
   display: flex;
   align-items: center;
@@ -114,18 +114,18 @@
 /* Set up for small devices */
   @media (max-width: 600px) {
 
-    .formContainer{
+    .form-container{
       flex-direction: column;
       align-items:center;
       gap: 10px;
       height: auto;
     }
 
-    .BtsContainer, .search, .toggle{
+    .buttons-container, .search, .toggle{
       width: 90%;
     }
 
-    .search__input, .select{
+    .search-input, .select{
       width: 90%;
       margin: 0;
     }
@@ -134,6 +134,11 @@
     .toggle{
       width: 5%;
       margin: 10px;
+    }
+
+    .search-button{
+      margin-left: -120px ;
+     
     }
 
   }
