@@ -9,16 +9,15 @@ const AddModal = ({ isOpen, closeModal, value, setValue, handleAddTodo }) => {
       contentLabel="ExampleModal"
       style={{
         content: {
-          top: "30%",
+          top: "32%",
           left: "50%",
           right: "auto",
           bottom: "auto",
-          marginRight: "-50%",
+          // marginRight: "-50%",
           transform: "translate(-50%, -50%)",
-          border: "1px solid white",
+          // border: "1px solid white",
           padding: "0px",
-          backgroundColor: "white",
-          // "border-radius": "30px",
+          "border-radius": "10px",
         },
       }}
     >

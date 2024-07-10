@@ -28,12 +28,12 @@
     {
       "id": "8",
       "text": "Fix full length light mode",
-      "completed": false
+      "completed": true
     },
     {
       "id": "9",
       "text": "Live refresh of the list",
-      "completed": false
+      "completed": true
     },
     {
       "id": "10",
@@ -43,7 +43,12 @@
     {
       "id": "4",
       "text": "Case sensitive search",
-      "completed": false
+      "completed": true
+    },
+    {
+      "id": "11",
+      "text": "Fix checkBox backgroun color",
+      "completed": true
     }
   ]
 }

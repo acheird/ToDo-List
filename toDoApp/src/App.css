@@ -25,9 +25,10 @@ body{
 
 body.light-theme{
   --bg-color: #F7F7F7; ;
-  --text-color: #252525;
+  --text-color: #6C63FF;
   --input-bg: #F7F7F7;
   --input-text: #252525;
+  --border-color: #6C63FF;
   /* --input-image:  url('./images/search_light.png'); */
 }
 

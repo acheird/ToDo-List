@@ -54,7 +54,7 @@
   width: 100%; 
   background-color: var(--bg-color);
   color: var(--input-text);
-  border-color: var(--border-color);
+  border-color: var(--text-color);
 
 
 }

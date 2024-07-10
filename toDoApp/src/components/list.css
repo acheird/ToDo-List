@@ -36,6 +36,7 @@
   color: var(--border-color); 
   outline: 1px solid var(--border-color);
   cursor: pointer;
+  margin-bottom: 15px;
 
 }
   
@@ -61,4 +62,5 @@
   left: 149px;
   margin: 30px auto;  
   display: flex; 
+  color: var(--input-text);
 }
