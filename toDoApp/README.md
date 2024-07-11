@@ -20,10 +20,10 @@ Project Structure
 
 The main logic of the project is located on /src file which is divided into four main parts:
 
-components: Located in the toDoApp/src/components directory
-services: Located in the toDoApp/src/services directory
-images: Located in the toDoApp/src/images directory
-App.jsx: Located in the toDoApp/src/App.jsx directory
+    • components: Located in the /toDoApp/src/components directory
+    • services: Located in the /toDoApp/src/services directory
+    • images: Located in the /toDoApp/src/images directory
+    • App.jsx: Located in the /toDoApp/src/App.jsx directory
 
 Features
 
