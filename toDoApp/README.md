@@ -20,17 +20,17 @@ Project Structure
 
 The main logic of the project is located on /src file which is divided into four main parts:
 
-    • components: Located in the /toDoApp/src/components directory
-    • services: Located in the /toDoApp/src/services directory
-    • images: Located in the /toDoApp/src/images directory
-    • App.jsx: Located in the /toDoApp/src/App.jsx directory
+    • components: Located in the toDoApp/src/components directory
+    • services: Located in the toDoApp/src/services directory
+    • images: Located in the toDoApp/src/images directory
+    • App.jsx: Located in the /oDoApp/src/App.jsx directory
 
 Features
 
-•Fetch and display to-do notes
-•Filter displayed to-do notes according to the search-bar and the dropdown filter
-(all/complete/incomplete) (Client-side filtering)
-•Mark to-do as completed
-•Delete a to-do
-•Create a new to-do
-•Toggle dark/light scheme of the app
+    • Fetch and display to-do notes
+    • Filter displayed to-do notes according to the search-bar and the dropdown filter
+      (all/complete/incomplete) (Client-side filtering)
+    • Mark to-do as completed
+    • Delete a to-do
+    • Create a new to-do
+    • Toggle dark/light scheme of the app
