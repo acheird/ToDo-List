@@ -9,8 +9,8 @@ Currently, two official plugins are available:
 
 Instructions
 
-• run "npm run dev" to launch the app
-• run "npx json-server --watch db.json --port 8000" to launch the server
+    • run "npm run dev" to launch the app
+    • run "npx json-server --watch db.json --port 8000" to launch the server
 
 ToDo List Application
 
