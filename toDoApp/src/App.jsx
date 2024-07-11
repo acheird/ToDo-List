@@ -20,25 +20,25 @@ import {
 Modal.setAppElement("#root");
 
 export function App() {
-  const [todos, setTodos] = useState([]);
-  let [value, setValue] = useState("");
-
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
-
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  const openModal = () => setModalIsOpen(true);
-  const closeModal = () => setModalIsOpen(false);
-
-  const [selectedImage, setSelectedImage] = useState(light);
-  const [selectedSearch, setSelectedSearch] = useState(search);
-
   // Fetching data from the server
   useEffect(() => {
     fetch("http://localhost:8000/todos")
       .then((response) => response.json())
       .then((data) => setTodos(data));
   }, []);
+
+  const [todos, setTodos] = useState([]);
+  let [value, setValue] = useState("");
+
+  // Modal state
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
+  // Theme state
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const [selectedImage, setSelectedImage] = useState(light);
+  const [selectedSearch, setSelectedSearch] = useState(search);
 
   // Switch between themes (dark/light)
   useEffect(() => {
