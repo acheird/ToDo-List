@@ -7,6 +7,11 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+Instructions
+
+run "npm run dev" to launch the app
+run "npx json-server --watch db.json --port 8000" to launch the server
+
 ToDo List Application
 
 This repository hosts a Frontend Todo List Application designed to create, manage and delete daily tasks.
