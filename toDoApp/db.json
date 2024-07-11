@@ -1,53 +1,33 @@
 {
   "todos": [
     {
-      "id": "2",
-      "text": "Check if there is text in the field before apply a new todo",
+      "id": "1",
+      "text": "Eat breakfast and get ready for work",
       "completed": true
     },
     {
-      "id": "3",
-      "text": "Close modal when apply a new todo",
+      "id": "2",
+      "text": "Read and respond to emails",
       "completed": true
+    },
+    {
+      "id": "4",
+      "text": "Read for 30 minutes",
+      "completed": false
     },
     {
       "id": "5",
-      "text": "Change Icon on toggle",
-      "completed": true
+      "text": "Take lunch",
+      "completed": false
     },
     {
       "id": "6",
-      "text": "Break App.css",
-      "completed": true
+      "text": "Work on projects",
+      "completed": false
     },
     {
       "id": "7",
-      "text": "Make app responsive",
-      "completed": true
-    },
-    {
-      "id": "8",
-      "text": "Fix full length light mode",
-      "completed": true
-    },
-    {
-      "id": "9",
-      "text": "Live refresh of the list",
-      "completed": false
-    },
-    {
-      "id": "10",
-      "text": "Fix search button light mode",
-      "completed": true
-    },
-    {
-      "id": "11",
-      "text": "Fix checkBox backgroun color",
-      "completed": false
-    },
-    {
-      "id": "12",
-      "text": "lala",
+      "text": "Go for a short walk after eating",
       "completed": false
     }
   ]
