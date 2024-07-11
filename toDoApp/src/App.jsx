@@ -102,6 +102,34 @@ export function App() {
     }
   }
 
+  // Show tasks filtered based on completed condition
+  async function handleFiltered(event) {
+    event.preventDefault();
+    const results = event.target.value;
+    try {
+      const response = await filterTodo();
+
+      if (response.ok) {
+        const fetchedTodos = await response.json();
+        if (results === "all") {
+          setTodos(fetchedTodos);
+        } else if (results === "completed") {
+          const remainingTodos = fetchedTodos.filter((todo) => todo.completed);
+          console.log(remainingTodos);
+          setTodos(remainingTodos);
+        } else if (results === "incompleted") {
+          const remainingTodos = fetchedTodos.filter((todo) => !todo.completed);
+          console.log(remainingTodos);
+          setTodos(remainingTodos);
+        }
+      } else {
+        console.error("Error updating todo:", response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  }
+
   // Update todo task progress (Completed/Incompleted)
   async function handleUpdateProgress(todoId, field) {
     // Looking in todo List for a todo item with the specified todoId
@@ -148,34 +176,6 @@ export function App() {
     }
   }
 
-  // Show tasks filtered based on completed condition
-  async function handleFiltered(event) {
-    event.preventDefault();
-    const results = event.target.value;
-    try {
-      const response = await filterTodo();
-
-      if (response.ok) {
-        const fetchedTodos = await response.json();
-        if (results === "all") {
-          setTodos(fetchedTodos);
-        } else if (results === "completed") {
-          const remainingTodos = fetchedTodos.filter((todo) => todo.completed);
-          console.log(remainingTodos);
-          setTodos(remainingTodos);
-        } else if (results === "incompleted") {
-          const remainingTodos = fetchedTodos.filter((todo) => !todo.completed);
-          console.log(remainingTodos);
-          setTodos(remainingTodos);
-        }
-      } else {
-        console.error("Error updating todo:", response.statusText);
-      }
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
-  }
-
   // Toggle Themes
   const toggleTheme = () => {
     //Change theme color
@@ -184,7 +184,6 @@ export function App() {
     setSelectedImage(selectedImage === light ? dark : light);
     // Change search button's image
     setSelectedSearch(selectedSearch === search_light ? search : search_light);
-    console.log(selectedSearch);
   };
 
   return (
