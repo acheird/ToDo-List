@@ -49,7 +49,7 @@ export function App() {
   async function handleAddTodo(event) {
     event.preventDefault();
 
-    if (value.trim() === "") {
+    if (!value.trim()) {
       alert("Input is empty");
     } else {
       // Create Id for the new entry based on existing todos
