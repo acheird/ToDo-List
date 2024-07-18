@@ -1,15 +1,12 @@
-.list{
-
+.list {
   width: 100%;
   margin-top: 15px;
   cursor: pointer;
-  
 }
 
 
 
-.list li{
-
+.list li {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
@@ -19,15 +16,13 @@
   border-bottom: 1px solid var(--border-color);
   background-color: var(--bg-color);
   color: var(--input-text);
-
 }
   
-.list li:last-child{
+.list li:last-child {
   border-bottom: none;
 }
 
-.list li input[type="checkbox"]{
-  
+.list li input[type="checkbox"] {
   display: inline-block;
   width: 26px;
   height: 26px;
@@ -37,26 +32,22 @@
   outline: 1px solid var(--border-color);
   cursor: pointer;
   margin-bottom: 15px;
-
 }
   
-.list li input[type="checkbox"]:checked{
-  
+.list li input[type="checkbox"]:checked {
   accent-color: #6C63FF;
-
 }
   
 
-.empty-list-image{
-    width: 221px;
-    height: 174px;
-    left: 149px;
-    margin: 30px auto;  
-    display: flex; 
-
+.empty-list-image {
+  width: 221px;
+  height: 174px;
+  left: 149px;
+  margin: 30px auto;  
+  display: flex; 
 }
       
-.empty-list-text{
+.empty-list-text {
   width: 60px;
   height: 174px;
   left: 149px;

@@ -1,6 +1,5 @@
 /* Main form section */
-.header{
-  
+.header {
   margin: auto;
   display: flex; 
   justify-content: center;
@@ -20,36 +19,32 @@
 
 
 /* Main form button container */
-.form-container{
-
+.form-container {
   display: flex;
   gap: 16px;
   width: 100%;
   height: 38px;  
-  align-items: center;
-  
+  align-items: center; 
 }
 
-.search{
+.search {
   position: relative;
   display: flex;
   flex: 1;
-
 }
 
-.search form{
+.search form {
   width: 100%;
 }
   
   
-.search form input:focus{
+.search form input:focus {
   background-color: var(--bg-color);
   border-color: var(--text-color);
 }
 
 /* Search input */
-.search-input{
-
+.search-input {
   box-sizing: border-box;
   padding: 8px 16px;  
   height: 38px;
@@ -59,32 +54,25 @@
   background-color: var(--bg-color);
   color: var(--input-text);
   border-color: var(--text-color);
-
-
 }
   
-.search-button{
-
+.search-button {
   background-color: transparent;
   outline: none;
   margin-left: -50px ;
   margin-top: -2px;
   width: 21px;
-  height: 21px;
-  
+  height: 21px; 
 }
   
 
-.buttons-container{
-
+.buttons-container {
   display: flex;
   align-items: center;
-
 }
 
 /* Filter button  */
-.select{
-  
+.select { 
   flex-direction: column;
   align-items: flex-start;
   padding: 10px;
@@ -94,51 +82,40 @@
   background: var(--border-color);
   color: var(--body-color);
   margin-right: 10px;
-
 }
 
-.select option{
+.select option {
   background-color: white;
   color: #6C63FF;
 }
 
 
 /* Toggle theme button */
-.toggle{
-
+.toggle {
   width: 38px;
   height: 38px;
-
 }
 
 /* Set up for small devices */
-  @media (max-width: 600px) {
-
-    .form-container{
-      flex-direction: column;
-      align-items:center;
-      gap: 10px;
-      height: auto;
-    }
-
-    .buttons-container, .search, .toggle{
-      width: 90%;
-    }
-
-    .search-input, .select{
-      width: 90%;
-      margin: 0;
-    }
-
-
-    .toggle{
-      width: 5%;
-      margin: 10px;
-    }
-
-    .search-button{
-      margin-left: -120px ;
-     
-    }
-
+@media (max-width: 600px) {
+  .form-container{
+    flex-direction: column;
+    align-items:center;
+    gap: 10px;
+    height: auto;
   }
+  .buttons-container, .search, .toggle{
+    width: 90%;
+  }
+  .search-input, .select{
+    width: 90%;
+    margin: 0;
+  }
+  .toggle{
+    width: 5%;
+    margin: 10px;
+  }
+  .search-button{
+    margin-left: -120px;    
+  }
+}

@@ -38,13 +38,12 @@ body {
   height: 100vh;
 }
 /* Light theme settings */
-body.light-theme{
+body.light-theme {
   --bg-color: #F7F7F7; ;
   --text-color: #6C63FF;
   --input-bg: #F7F7F7;
   --input-text: #252525;
   --border-color: #6C63FF;
-
 }
 
 h1 {

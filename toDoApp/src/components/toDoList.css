@@ -1,17 +1,14 @@
-.list li .text-wrapper{
-
+.list li .text-wrapper {
   display: flex;
   align-items: center;
   width: 100%;
   font-size: 18px;
   line-height: 20px;
   padding: 0px 0px 8px 8px;
-
 }
 
 
-.list li .delete-button{
-
+.list li .delete-button {
   display: inline-block;
   position: relative;
   background-size:cover;
@@ -20,5 +17,4 @@
   width: 18px;
   height: 18px;
   padding: 0px 8px 0px 8px;
-
 }

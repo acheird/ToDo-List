@@ -1,37 +1,28 @@
 
 #root {
-  
   width: 750px;
   margin: 0 auto auto auto;
   background-color: var(--bg-color);
-  
 }
 
 .main-container {
-
   width: 750px;
   margin:  0px auto auto auto;
-
  }
 
-.list-container{
-
+.list-container {
   display: flex;
-  
 }
 
 
-.add-button-wrapper{
-
+.add-button-wrapper {
   margin: auto;
   display: flex;
   justify-content:flex-end;
-
 }
 
 
-.add-button{
-
+.add-button {
   position:absolute;
   background-image: url('./images/add.png');
   background-size:cover;
@@ -42,17 +33,14 @@
   }
 
 @media (max-width: 600px) {
-
- 
-    .add-button {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      right:auto;
-      top:auto;
-      margin: 30px;
-    }
-
+  .add-button {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    right:auto;
+    top:auto;
+    margin: 30px;
+  }
 }
 
 
