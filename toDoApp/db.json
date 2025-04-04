@@ -18,7 +18,7 @@
     {
       "id": "5",
       "text": "Take lunch",
-      "completed": false
+      "completed": true
     },
     {
       "id": "6",

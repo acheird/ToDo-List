@@ -149,7 +149,7 @@ export function App() {
         const newTodos = [...todos];
         // Updates task's progress
         newTodos[todoIndex] = newTodo;
-        new setTodos(newTodos);
+        setTodos(newTodos);
       } else {
         console.error("Error updating todo:", response.statusText);
       }
