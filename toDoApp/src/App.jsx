@@ -18,7 +18,7 @@ import {
 } from "./services/TodoService";
 
 Modal.setAppElement("#root");
-
+// test comment
 export function App() {
   // Fetching data from the server
   useEffect(() => {
